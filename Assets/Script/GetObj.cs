@@ -10,7 +10,6 @@ public class GetObj : MonoBehaviour
     {
         GetObject();
     }
-
     void GetObject()
     {
         if(Input.GetMouseButtonDown(0))
