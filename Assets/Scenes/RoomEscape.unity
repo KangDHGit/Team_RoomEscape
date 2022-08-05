@@ -184,7 +184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1650273295}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -363,7 +363,7 @@ Transform:
   m_Children:
   - {fileID: 1877825953}
   m_Father: {fileID: 1650273295}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650273294
 GameObject:
@@ -394,8 +394,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 963194228}
   - {fileID: 434834253}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8408cc8334b62479e7b2f98087e099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MCamList: []
 --- !u!1 &1877825952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bb52aefcd5c34ab4b21142e6dd533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objMCam: {fileID: 0}
+  _objZCam: {fileID: 0}
 --- !u!33 &7913782768965943134
 MeshFilter:
   m_ObjectHideFlags: 0
