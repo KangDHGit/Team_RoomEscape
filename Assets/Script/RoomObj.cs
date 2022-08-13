@@ -19,7 +19,6 @@ namespace RoomEscape
         public Room _room; // 이 오브젝트가 속한 방
         public GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
 
-
         void Start()
         {
             if (_room != Room.None)
