@@ -31,8 +31,20 @@ namespace RoomEscape
 
         private void OnMouseDown()
         {
-            _objZCam.SetActive(true);
-            GetComponent<Collider>().enabled = false;
+            if (_objZCam != null)
+            {
+                _objZCam.SetActive(true);
+                GetComponent<Collider>().enabled = false;
+            }
+        }
+
+        public void OnClick_BackBtn()
+        {
+            if (_objZCam != null)
+            {
+                _objZCam.SetActive(false);
+                GetComponent<Collider>().enabled = true;
+            }
         }
     }
 }
