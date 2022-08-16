@@ -8,9 +8,11 @@ namespace RoomEscape
     {
         public static CameraManager CamMgr; // 싱글턴
 
+
         public Room _room_Now; // 내가있는방
         private GameObject _objMCam_Now; // 내가있는방의 메인카메라
         public List<GameObject> _objMCam_List; // 모든 방의 메인카메라 리스트
+        public bool _isZoom = false;
 
         private void Awake()
         {
@@ -20,17 +22,7 @@ namespace RoomEscape
             SetMCam(Room.SPRING); // 초기 방설정 : 봄
         }
 
-        public void ClickRightButton()  // 오른쪽 화살표 클릭
-        {
-            _objMCam_Now.transform.Rotate(new Vector3(0, 90, 0));
-        }
-
-        public void ClickLeftButton()   // 왼쪽 화살표 클릭
-        {
-            _objMCam_Now.transform.Rotate(new Vector3(0, -90, 0));
-        }
-
-        void AllMCamOff()   // 모든 메인카메라 끄기
+        void AllMCamOff()   // 모든방의 메인카메라 끄기
         {
             if(_objMCam_List != null)
             {
@@ -47,5 +39,17 @@ namespace RoomEscape
             AllMCamOff();
             _objMCam_Now.SetActive(true);               // 메인카메라 켜기
         }
+
+        #region 카메라 좌우측 회전
+        public void ClickRightButton()  // 오른쪽 화살표 클릭
+        {
+            _objMCam_Now.transform.Rotate(new Vector3(0, 90, 0));
+        }
+
+        public void ClickLeftButton()   // 왼쪽 화살표 클릭
+        {
+            _objMCam_Now.transform.Rotate(new Vector3(0, -90, 0));
+        }
+        #endregion
     }
 }

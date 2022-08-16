@@ -6,28 +6,19 @@ namespace RoomEscape
 {
     public class Door : MonoBehaviour
     {
-        // ¹®ÀÌ ¿¬°áµÈ ¹æµé
-        public Room _roomA;
-        public Room _roomB;
-        // ¿­¸²¿©ºÎ
+        // ë¬¸ì´ ì—°ê²°ë˜ìˆëŠ” ë°©
+        public Room _roomOut;
+        // ì—´ë ¤ìˆëŠ”ì§€ ì—¬ë¶€
         public bool _isOpen;
 
         private void OnMouseDown()
         {
-            if(_isOpen)
+            if(_isOpen && !CameraManager.CamMgr._isZoom)
             {
-                if(CameraManager.CamMgr._room_Now == _roomA)
-                {
-                    CameraManager.CamMgr.SetMCam(_roomB);
-                }
-                else if(CameraManager.CamMgr._room_Now == _roomB)
-                {
-                    CameraManager.CamMgr.SetMCam(_roomA);
-                }
-                Debug.Log("¹®Àº ¿­·ÈÁö¸¸ ÀÌµ¿¿À·ù");
+                CameraManager.CamMgr.SetMCam(_roomOut);
             }
             else
-                Debug.Log("¹® Àá±è");
+                Debug.Log("Door is Close or Zoom Activate");
         }
     }
 }

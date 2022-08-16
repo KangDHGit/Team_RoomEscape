@@ -35,6 +35,7 @@ namespace RoomEscape
             {
                 _objZCam.SetActive(true);
                 GetComponent<Collider>().enabled = false;
+                CameraManager.CamMgr._isZoom = true;
             }
         }
 

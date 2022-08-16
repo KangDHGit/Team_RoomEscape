@@ -17,15 +17,14 @@ namespace RoomEscape
             _listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInChildren<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
             //_listWinter = new List<RoomObj>(transform.Find("Room_Winter").GetComponentsInChildren<RoomObj>());
+           
         }
-        // Update is called once per frame
         void Update()
         {
 
         }
 
-        // �ڷΰ��� ��ư�� ������ �Լ�
-        void OnClick_BackBtn()
+        void OnClick_BackBtn()  // 뒤로가기 버튼을 눌렀을때 자신이 있는방의 RoomObj들만 함수 실행
         {
             switch (CameraManager.CamMgr._room_Now)
             {
@@ -45,12 +44,13 @@ namespace RoomEscape
                     break;
             }
         }
-        void SwitchToMainView(List<RoomObj> list)
+        void SwitchToMainView(List<RoomObj> list)   //리스트 안의 RoomObj별 OnClick_BackBtn함수 실행
         {
             foreach (var roomObj in list)
             {
                 roomObj.OnClick_BackBtn();
             }
+            CameraManager.CamMgr._isZoom = false;
         }
     }
 }
