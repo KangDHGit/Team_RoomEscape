@@ -18,6 +18,7 @@ namespace RoomEscape
         
         public Room _room; // 이 오브젝트가 속한 방
         public GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
+        public List<RoomItem> _itemList;    // 오브젝트의 자식 아이템
 
         void Start()
         {
@@ -26,6 +27,15 @@ namespace RoomEscape
                 _objZCam = CameraManager.CamMgr.transform.Find($"{_room}/Cam_{gameObject.name}").gameObject;
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
+                _itemList = new List<RoomItem>(transform.GetComponentsInChildren<RoomItem>());
+                if(_itemList != null)
+                {
+                    foreach (var item in _itemList)
+                    {
+                        
+                    }
+                }
+
             }
         }
 

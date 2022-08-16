@@ -7,7 +7,8 @@ namespace RoomEscape
     public class RoomItem : MonoBehaviour
     {
         public string _name;
-
+        Collider _col;
+        
         private void OnMouseEnter()
         {
             Debug.Log(_name);
@@ -19,6 +20,13 @@ namespace RoomEscape
             Debug.Log(_name + " Get!!!!");
             Inventory.I.AddItem(_name);
             gameObject.SetActive(false);
+        }
+
+        public void SetCol(bool stat)
+        {
+            if (_col == null)
+                _col = GetComponent<Collider>();
+            _col.enabled = stat;
         }
     }
 }
