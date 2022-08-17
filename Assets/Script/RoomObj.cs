@@ -34,6 +34,12 @@ namespace RoomEscape
 
         private void OnMouseDown()
         {
+            if(UIManager._uiMgr.CheckClickUI())
+            {
+                Debug.Log("UI Crash");
+                return;
+            }
+
             if (_objZCam != null)
             {
                 _objZCam.SetActive(true);
