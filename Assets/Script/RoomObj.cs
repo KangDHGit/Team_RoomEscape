@@ -28,14 +28,7 @@ namespace RoomEscape
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
                 _itemList = new List<RoomItem>(transform.GetComponentsInChildren<RoomItem>());
-                if(_itemList != null)
-                {
-                    foreach (var item in _itemList)
-                    {
-                        
-                    }
-                }
-
+                ItemListSetCol(false);
             }
         }
 
@@ -46,6 +39,7 @@ namespace RoomEscape
                 _objZCam.SetActive(true);
                 GetComponent<Collider>().enabled = false;
                 CameraManager.CamMgr._isZoom = true;
+                ItemListSetCol(true);
             }
         }
 
@@ -55,6 +49,18 @@ namespace RoomEscape
             {
                 _objZCam.SetActive(false);
                 GetComponent<Collider>().enabled = true;
+                ItemListSetCol(false);
+            }
+        }
+
+        public void ItemListSetCol(bool stat)
+        {
+            if (_itemList != null)
+            {
+                foreach (var item in _itemList)
+                {
+                    item.SetCol(stat);
+                }
             }
         }
     }
