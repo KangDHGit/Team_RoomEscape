@@ -11,7 +11,8 @@ public class DialLock : MonoBehaviour
 
 
 
-    float[] _password = new float[] { 36, 72, 108, 144 };
+    public float[] _password = new float[] { 36, 72, 108, 144 };
+    public bool[] _password_bool = new bool[] { true, false, true, false };
     int index = 0;
     bool[] _clear = new bool[] { false, false, false, false };
 
@@ -20,9 +21,16 @@ public class DialLock : MonoBehaviour
     Light[] _bulbColor;
 
     private float speed = 10f;
+
+    public bool _leftMoving = false;
+    public bool _rightMoving = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        _leftMoving = false;
+        _rightMoving = false;
 
         _dial = transform.Find("Cube.003/Dial").gameObject;
         _bulbColor = new Light[4];
@@ -42,19 +50,34 @@ public class DialLock : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            _dial.transform.Rotate(0f, 0f, -Input.GetAxis("Mouse X") * speed, Space.World);
-            _dial.transform.Rotate(0f, 0f, -Input.GetAxis("Mouse Y") * speed);
+            float yRot = -Input.GetAxis("Mouse Y") * speed;
+
+            Debug.Log("yRot: " + yRot);
+
+            if (yRot > 0.0f)
+            {
+                _rightMoving = true;
+                _leftMoving = false;
+            }
+
+            if (yRot < 0.0f)
+            {
+                _rightMoving = false;
+                _leftMoving = true;
+            }
+
+            _dial.transform.Rotate(0f, 0f, yRot);
         }
         if (Input.GetMouseButtonUp(0))
         {
             _nowAngle = _dial.transform.eulerAngles.z;
-            Debug.Log($"_nowAngle : {_nowAngle}");
+            //Debug.Log($"_nowAngle : {_nowAngle}");
 
 
             Dial_Fixed(ref _nowAngle);
-            Debug.Log($"_nowAngle : {_nowAngle}");
+            //Debug.Log($"_nowAngle : {_nowAngle}");
 
-            if (_nowAngle == _password[index])
+            if (_nowAngle == _password[index] && _rightMoving == _password_bool[index])
             {
                 _clear[index] = true;
                 _bulbColor[index].color = Color.green;
@@ -76,6 +99,9 @@ public class DialLock : MonoBehaviour
             }
 
             _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f + _nowAngle);
+
+            _leftMoving = false;
+            _rightMoving = false;
 
         }
 
