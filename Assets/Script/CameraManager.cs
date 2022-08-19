@@ -10,7 +10,7 @@ namespace RoomEscape
 
 
         public Room _room_Now; // 내가있는방
-        private GameObject _objMCam_Now; // 내가있는방의 메인카메라
+        public GameObject _objMCam_Now; // 내가있는방의 메인카메라
         public List<GameObject> _objMCam_List; // 모든 방의 메인카메라 리스트
         public bool _isZoom = false;
 
