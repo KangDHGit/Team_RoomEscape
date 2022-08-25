@@ -94,6 +94,7 @@ public class DialLock : MonoBehaviour
                 {
                     _clear[i] = false;
                 }
+                _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f);
                 index = 0;
                 ColorWhite();
             }
