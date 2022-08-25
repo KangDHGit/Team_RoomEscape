@@ -30,13 +30,15 @@ namespace RoomEscape
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 Debug.Log(hitInfo.transform.gameObject.name);
-                if (!hitInfo.transform.GetComponent<Door>().CheckItem(_txt_ItemName.text))
-                    _imgItem.rectTransform.localPosition = _vecImgOrigin;
-                else
+                if (hitInfo.transform.TryGetComponent<Door>(out Door hitDoor))
                 {
-                    _imgItem.rectTransform.localPosition = _vecImgOrigin;
-                    this.gameObject.SetActive(false);
+                    if (hitDoor.CheckItem(_txt_ItemName.text))
+                    {
+                        _imgItem.rectTransform.localPosition = _vecImgOrigin;
+                        this.gameObject.SetActive(false);
+                    }
                 }
+                _imgItem.rectTransform.localPosition = _vecImgOrigin;
             }
             else
             {
