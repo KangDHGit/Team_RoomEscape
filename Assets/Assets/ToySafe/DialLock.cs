@@ -17,6 +17,7 @@ public class DialLock : MonoBehaviour
     bool[] _clear = new bool[] { false, false, false, false };
 
     float _nowAngle = 0;
+    float _setAngle = 0;
 
     Light[] _bulbColor;
 
@@ -71,13 +72,17 @@ public class DialLock : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _nowAngle = _dial.transform.eulerAngles.z;
-            //Debug.Log($"_nowAngle : {_nowAngle}");
+            
 
 
-            Dial_Fixed(ref _nowAngle);
-            //Debug.Log($"_nowAngle : {_nowAngle}");
+            _setAngle =  Dial_Fixed(_nowAngle);
+            Debug.Log($"_nowAngle : {_nowAngle}");
+            Debug.Log($"_setAngle : {_setAngle}");
 
-            if (_nowAngle == _password[index] && _rightMoving == _password_bool[index])
+
+            _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f + _setAngle);
+
+            if (_setAngle == _password[index] && _rightMoving == _password_bool[index])
             {
                 _clear[index] = true;
                 _bulbColor[index].color = Color.green;
@@ -94,12 +99,14 @@ public class DialLock : MonoBehaviour
                 {
                     _clear[i] = false;
                 }
+
                 _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f);
+
                 index = 0;
                 ColorWhite();
             }
 
-            _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f + _nowAngle);
+            
 
             _leftMoving = false;
             _rightMoving = false;
@@ -108,7 +115,7 @@ public class DialLock : MonoBehaviour
 
     }
 
-    public void ColorWhite()
+    void ColorWhite()
     {
         _bulbColor[0].color = Color.red;
         _bulbColor[1].color = Color.red;
@@ -116,7 +123,7 @@ public class DialLock : MonoBehaviour
         _bulbColor[3].color = Color.red;
     }
 
-    void Dial_Fixed(ref float _nowAngle)
+    float Dial_Fixed(float _nowAngle)
     {
         float[] _fixedAngle = new float[12] { 0f, 36f, 72f, 108f, 144f, 180f, 216f, 252f, 288f, 324f, 360f, 360f };
 
@@ -140,6 +147,7 @@ public class DialLock : MonoBehaviour
                 if (_nowAngle <= gou)
                 {
                     _nowAngle = _fixedAngle[i];
+                    
                 }
                 else
                 {
@@ -149,6 +157,7 @@ public class DialLock : MonoBehaviour
             }
         }
 
+        return _nowAngle;
     }
 }
 
