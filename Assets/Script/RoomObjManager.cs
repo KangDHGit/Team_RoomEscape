@@ -6,27 +6,29 @@ namespace RoomEscape
 {
     public class RoomObjManager : MonoBehaviour
     {
+        public RoomObjManager I;
+
         public List<RoomObj> _listSpring;
         public List<RoomObj> _listSummer;
         public List<RoomObj> _listFall;
         public List<RoomObj> _listWinter;
 
-        void Start()
+        void Awake()
         {
             _listSpring = new List<RoomObj>(transform.Find("Room_Spring").GetComponentsInChildren<RoomObj>());
             _listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInChildren<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
             //_listWinter = new List<RoomObj>(transform.Find("Room_Winter").GetComponentsInChildren<RoomObj>());
-           
         }
-        void Update()
-        {
 
+        public void Init()
+        {
+            
         }
 
         void OnClick_BackBtn()  // 뒤로가기 버튼을 눌렀을때 자신이 있는방의 RoomObj들만 함수 실행
         {
-            switch (CameraManager.CamMgr._room_Now)
+            switch (CameraManager.I._room_Now)
             {
                 case Room.None:
                     break;
@@ -50,7 +52,7 @@ namespace RoomEscape
             {
                 roomObj.OnClick_BackBtn();
             }
-            CameraManager.CamMgr._isZoom = false;
+            CameraManager.I._isZoom = false;
         }
     }
 }

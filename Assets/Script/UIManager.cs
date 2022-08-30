@@ -8,15 +8,21 @@ namespace RoomEscape
 {
     public class UIManager : MonoBehaviour
     {
-        public static UIManager _uiMgr;
+        public static UIManager I;
 
         private GraphicRaycaster _gRayCaster; //UI Raycast
 
         private void Awake()
         {
-            _uiMgr = this;
+            I = this;
             _gRayCaster = GetComponent<GraphicRaycaster>();
         }
+
+        public void Init()
+        {
+
+        }
+
         private void Update()
         {
             //if(Input.GetMouseButtonDown(0))

@@ -17,6 +17,13 @@ namespace RoomEscape
             _imgItem = transform.Find("Img_Item").GetComponent<Image>();
             _vecImgOrigin = _imgItem.transform.localPosition;
         }
+
+        public void Init()
+        {
+            _txt_ItemName = transform.Find("Txt_ItemName").GetComponent<Text>();
+            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
+            _vecImgOrigin = _imgItem.transform.localPosition;
+        }
         public void DragItem()
         {
             _imgItem.rectTransform.position = Input.mousePosition;
@@ -24,7 +31,7 @@ namespace RoomEscape
         public void EndDrag()
         {
             // 레이 = 마우스 클릭위치
-            Ray ray = CameraManager.CamMgr._objMCam_Now.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+            Ray ray = CameraManager.I._objMCam_Now.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
             // ray위치에 레이캐스트를 해서 걸리면 hitInfo에 정보를 넣음
             if (Physics.Raycast(ray, out RaycastHit hitInfo))

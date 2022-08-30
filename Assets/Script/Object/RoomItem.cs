@@ -15,7 +15,7 @@ namespace RoomEscape
         }
         private void OnMouseDown()
         {
-            if (!CameraManager.CamMgr._isZoom)
+            if (!CameraManager.I._isZoom)
                 return;
             Debug.Log(_name + " Get!!!!");
             Inventory.I.AddItem(_name);

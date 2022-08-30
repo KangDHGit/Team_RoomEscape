@@ -16,9 +16,9 @@ namespace RoomEscape
 
         private void OnMouseDown()
         {
-            if(_satisfaction && !CameraManager.CamMgr._isZoom)
+            if(_satisfaction && !CameraManager.I._isZoom)
             {
-                CameraManager.CamMgr.SetMCam(_roomOut);
+                CameraManager.I.SetMCam(_roomOut);
             }
             else
                 Debug.Log("Door is Close or Zoom Activate");

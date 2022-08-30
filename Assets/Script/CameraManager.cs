@@ -6,7 +6,7 @@ namespace RoomEscape
 {
     public class CameraManager : MonoBehaviour
     {
-        public static CameraManager CamMgr; // 싱글턴
+        public static CameraManager I; // 싱글턴
 
 
         public Room _room_Now; // 내가있는방
@@ -16,9 +16,13 @@ namespace RoomEscape
 
         private void Awake()
         {
-            CamMgr = this;
+            I = this;
 
             _objMCam_List = new List<GameObject>(GameObject.FindGameObjectsWithTag("MainCamera")); // 모든방의 메인카메라를 가져옴
+        }
+
+        public void Init()
+        {
             SetMCam(Room.SPRING); // 초기 방설정 : 봄
         }
 

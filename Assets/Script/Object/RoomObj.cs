@@ -24,7 +24,7 @@ namespace RoomEscape
         {
             if (_room != Room.None)
             {
-                _objZCam = CameraManager.CamMgr.transform.Find($"{_room}/Cam_{gameObject.name}").gameObject;
+                _objZCam = CameraManager.I.transform.Find($"{_room}/Cam_{gameObject.name}").gameObject;
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
                 _itemList = new List<RoomItem>(transform.GetComponentsInChildren<RoomItem>());
@@ -34,7 +34,7 @@ namespace RoomEscape
 
         private void OnMouseDown()
         {
-            if(UIManager._uiMgr.CheckClickUI())
+            if(UIManager.I.CheckClickUI())
             {
                 Debug.Log("UI Crash");
                 return;
@@ -44,7 +44,7 @@ namespace RoomEscape
             {
                 _objZCam.SetActive(true);
                 GetComponent<Collider>().enabled = false;
-                CameraManager.CamMgr._isZoom = true;
+                CameraManager.I._isZoom = true;
                 ItemListSetCol(true);
             }
         }
