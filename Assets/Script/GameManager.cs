@@ -8,7 +8,9 @@ namespace RoomEscape
     {
         private void Start()
         {
-            CameraManager.I.Init();                
+            CameraManager.I.Init();
         }
     }
 }
+
+

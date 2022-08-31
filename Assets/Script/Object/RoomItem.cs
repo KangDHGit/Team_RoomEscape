@@ -8,7 +8,7 @@ namespace RoomEscape
     {
         public string _name;
         Collider _col;
-        
+
         private void OnMouseEnter()
         {
             Debug.Log(_name);

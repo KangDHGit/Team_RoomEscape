@@ -325,12 +325,12 @@ GameObject:
   - component: {fileID: 145684743}
   - component: {fileID: 145684744}
   m_Layer: 0
-  m_Name: Cam_Desk
+  m_Name: Cam_ToyBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &145684743
 Transform:
   m_ObjectHideFlags: 0
@@ -338,14 +338,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145684742}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 3, y: 2, z: 2}
+  m_LocalRotation: {x: 0.09229593, y: 0.7010574, z: -0.09229593, w: 0.7010574}
+  m_LocalPosition: {x: -2.5, y: 1.5, z: -4.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 434834253}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 90, z: 0}
 --- !u!20 &145684744
 Camera:
   m_ObjectHideFlags: 0
@@ -4250,7 +4250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1877825953
 Transform:
   m_ObjectHideFlags: 0
@@ -4402,7 +4402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 1
   _objZCam: {fileID: 0}
-  _itemList: []
+  _list_ChildRoomObj: []
+  _list_Item: []
 --- !u!65 &1911813530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7707,8 +7708,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5506957511376582422}
+  - component: {fileID: 5506957511376582423}
+  - component: {fileID: 5506957511376582424}
   m_Layer: 0
-  m_Name: HYFS_accessories_boxes__combination_2_1
+  m_Name: ToyBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76506,6 +76509,35 @@ Transform:
   m_Father: {fileID: 5674620103217464573}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5506957511376582423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261423419558861492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 1.5, z: 3.4}
+  m_Center: {x: -0.5, y: 0.83, z: -4.36}
+--- !u!114 &5506957511376582424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261423419558861492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3bb52aefcd5c34ab4b21142e6dd533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _room: 0
+  _objZCam: {fileID: 0}
+  _list_ChildRoomObj: []
+  _list_Item: []
 --- !u!33 &5507117878899847152
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93812,7 +93844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 1877825952}
-  _itemList: []
+  _list_ChildRoomObj: []
+  _list_Item: []
 --- !u!1 &6819871810929908299
 GameObject:
   m_ObjectHideFlags: 0
@@ -119416,7 +119449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 865966542}
-  _itemList: []
+  _list_ChildRoomObj: []
+  _list_Item: []
 --- !u!23 &8881099796209289653
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -16,9 +16,10 @@ namespace RoomEscape
     public class RoomObj : MonoBehaviour
     {
         
-        public Room _room; // 이 오브젝트가 속한 방
-        public GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
-        public List<RoomItem> _itemList;    // 오브젝트의 자식 아이템
+        [SerializeField] Room _room; // 이 오브젝트가 속한 방
+        [SerializeField] GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
+        public List<RoomObj> _list_ChildRoomObj; // 오브젝트의 자식 오브젝트
+        public List<RoomItem> _list_Item;    // 오브젝트의 자식 아이템
 
         void Start()
         {
@@ -27,7 +28,10 @@ namespace RoomEscape
                 _objZCam = CameraManager.I.transform.Find($"{_room}/Cam_{gameObject.name}").gameObject;
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
-                _itemList = new List<RoomItem>(transform.GetComponentsInChildren<RoomItem>());
+
+                _list_ChildRoomObj = new List<RoomObj>(GetComponentsInDirectChildren<RoomObj>());
+
+                _list_Item = new List<RoomItem>(GetComponentsInChildren<RoomItem>());
                 ItemListSetCol(false);
             }
         }
@@ -47,6 +51,11 @@ namespace RoomEscape
                 CameraManager.I._isZoom = true;
                 ItemListSetCol(true);
             }
+
+            foreach (Transform child in transform)
+            {
+                Debug.Log(child.name);
+            }
         }
 
         public void OnClick_BackBtn()
@@ -61,13 +70,34 @@ namespace RoomEscape
 
         public void ItemListSetCol(bool stat)
         {
-            if (_itemList != null)
+            if (_list_Item != null)
             {
-                foreach (var item in _itemList)
+                foreach (var item in _list_Item)
                 {
                     item.SetCol(stat);
                 }
             }
         }
+        public T[] GetComponentsInDirectChildren<T>()
+        {
+            List<T> list = new List<T>();
+            foreach (Transform child in this.transform)
+            {
+                list.Add(child.GetComponent<T>());
+            }
+            T[] array = list.ToArray();
+            return array;
+        }
+
+        //public T[] FindAll_DirectChild<T>()
+        //{
+        //    List<T> list = new List<T>();
+        //    foreach (Transform child in this.transform)
+        //    {
+        //        list.Add(child.GetComponent<MonoBehaviour>());
+        //    }
+        //    T[] array = list.ToArray();
+        //    return array;
+        //}
     }
 }
