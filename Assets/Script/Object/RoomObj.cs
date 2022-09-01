@@ -39,7 +39,7 @@ namespace RoomEscape
 
         protected virtual void OnMouseDown()
         {
-            if (!UIManager.I.CheckClickUI() && CameraManager.I._isZoom)
+            if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom)
             {
                 if (_objZCam != null)
                 {
@@ -58,12 +58,13 @@ namespace RoomEscape
             {
                 if (_objZCam.gameObject.activeSelf)
                 {
-                    if(_list_ChildRoomObj.Count > 0)
-
-                    _objZCam.SetActive(false);
-                    GetComponent<Collider>().enabled = true;
-                    ListSetCol(_list_ChildRoomObj, false);
-                    ListSetCol(_list_Item, false);
+                    if (!(_list_ChildRoomObj.Count > 0))
+                    {
+                        _objZCam.SetActive(false);
+                        GetComponent<Collider>().enabled = true;
+                        ListSetCol(_list_ChildRoomObj, false);
+                        ListSetCol(_list_Item, false);
+                    }
                 }
             }
         }
