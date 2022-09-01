@@ -103781,7 +103781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3117083834886316813}
   - component: {fileID: 7654548839182067833}
-  - component: {fileID: 7654548839182067832}
+  - component: {fileID: 7654548839182067834}
   m_Layer: 0
   m_Name: Toy_Chest
   m_TagString: Untagged
@@ -103789,22 +103789,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7654548839182067832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654548839182067831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3bb52aefcd5c34ab4b21142e6dd533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _room: 0
-  _objZCam: {fileID: 0}
-  _list_ChildRoomObj: []
-  _list_Item: []
 --- !u!65 &7654548839182067833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103818,6 +103802,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.65, z: 0.65}
   m_Center: {x: -0.54, y: 0.42, z: -4.502}
+--- !u!114 &7654548839182067834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654548839182067831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9dea51f49091146961ce5935c7e4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _room: 0
+  _objZCam: {fileID: 0}
+  _list_ChildRoomObj: []
+  _list_Item: []
 --- !u!4 &7655586901715170852
 Transform:
   m_ObjectHideFlags: 0
