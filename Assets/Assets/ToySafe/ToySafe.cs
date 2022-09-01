@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class ToySafe : MonoBehaviour
 {
+    public static ToySafe I; //싱글턴
 
     public GameObject _doorClosed;
     public GameObject _doorOpen;
 
+    private void Awake()
+    {
+        I = this;
+    }
+        
     private void Start()
     {
         _doorClosed = transform.Find("DoorClosed").gameObject;
