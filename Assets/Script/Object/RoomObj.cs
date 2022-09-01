@@ -29,32 +29,26 @@ namespace RoomEscape
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
 
-                _list_ChildRoomObj = new List<RoomObj>(GetComponentsInDirectChildren<RoomObj>());
+                _list_ChildRoomObj = new List<RoomObj>(GetComponentsInDirectChild<RoomObj>());
+                ListSetCol(_list_ChildRoomObj, false);
 
                 _list_Item = new List<RoomItem>(GetComponentsInChildren<RoomItem>());
-                ItemListSetCol(false);
+                ListSetCol(_list_Item, false);
             }
         }
 
-        private void OnMouseDown()
+        protected virtual void OnMouseDown()
         {
-            if(UIManager.I.CheckClickUI())
+            if (!UIManager.I.CheckClickUI() && CameraManager.I._isZoom)
             {
-                Debug.Log("UI Crash");
-                return;
-            }
-
-            if (_objZCam != null)
-            {
-                _objZCam.SetActive(true);
-                GetComponent<Collider>().enabled = false;
-                CameraManager.I._isZoom = true;
-                ItemListSetCol(true);
-            }
-
-            foreach (Transform child in transform)
-            {
-                Debug.Log(child.name);
+                if (_objZCam != null)
+                {
+                    _objZCam.SetActive(true);
+                    GetComponent<Collider>().enabled = false;
+                    CameraManager.I._isZoom = true;
+                    ListSetCol(_list_ChildRoomObj, true);
+                    ListSetCol(_list_Item, true);
+                }
             }
         }
 
@@ -62,42 +56,43 @@ namespace RoomEscape
         {
             if (_objZCam != null)
             {
-                _objZCam.SetActive(false);
-                GetComponent<Collider>().enabled = true;
-                ItemListSetCol(false);
-            }
-        }
-
-        public void ItemListSetCol(bool stat)
-        {
-            if (_list_Item != null)
-            {
-                foreach (var item in _list_Item)
+                if (_objZCam.gameObject.activeSelf)
                 {
-                    item.SetCol(stat);
+                    if(_list_ChildRoomObj.Count > 0)
+
+                    _objZCam.SetActive(false);
+                    GetComponent<Collider>().enabled = true;
+                    ListSetCol(_list_ChildRoomObj, false);
+                    ListSetCol(_list_Item, false);
                 }
             }
         }
-        public T[] GetComponentsInDirectChildren<T>()
+
+        public T[] GetComponentsInDirectChild<T>() where T : MonoBehaviour
         {
             List<T> list = new List<T>();
-            foreach (Transform child in this.transform)
+            if (this.transform.childCount > 0)
             {
-                list.Add(child.GetComponent<T>());
+                foreach (Transform child in this.transform)
+                {
+                    if (child.TryGetComponent<T>(out T component))
+                        list.Add(component);
+                }
             }
             T[] array = list.ToArray();
             return array;
         }
 
-        //public T[] FindAll_DirectChild<T>()
-        //{
-        //    List<T> list = new List<T>();
-        //    foreach (Transform child in this.transform)
-        //    {
-        //        list.Add(child.GetComponent<MonoBehaviour>());
-        //    }
-        //    T[] array = list.ToArray();
-        //    return array;
-        //}
+        public void ListSetCol<T>(List<T> list, bool stat) where T : MonoBehaviour
+        {
+            if (list != null)
+            {
+                foreach (var item in list)
+                {
+                    if (item.TryGetComponent<Collider>(out Collider col))
+                        col.enabled = stat;
+                }
+            }
+        }
     }
 }
