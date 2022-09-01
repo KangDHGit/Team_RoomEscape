@@ -58,7 +58,7 @@ namespace RoomEscape
             {
                 if (_objZCam.gameObject.activeSelf)
                 {
-                    if (!(_list_ChildRoomObj.Count > 0))
+                    if (!CheckOnChildCam())
                     {
                         _objZCam.SetActive(false);
                         GetComponent<Collider>().enabled = true;
@@ -94,6 +94,22 @@ namespace RoomEscape
                         col.enabled = stat;
                 }
             }
+        }
+
+        bool CheckOnChildCam()
+        {
+            if (_list_ChildRoomObj == null)
+                return false;
+            foreach (RoomObj roomObj in _list_ChildRoomObj)
+            {
+                if (roomObj._objZCam.activeSelf)
+                    return true;
+                else if (!roomObj._objZCam.activeSelf)
+                {
+                    continue;
+                }
+            }
+            return false;
         }
     }
 }
