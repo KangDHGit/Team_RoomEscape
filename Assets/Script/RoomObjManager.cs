@@ -7,7 +7,6 @@ namespace RoomEscape
     public class RoomObjManager : MonoBehaviour
     {
         public RoomObjManager I;
-
         public List<RoomObj> _listSpring;
         public List<RoomObj> _listSummer;
         public List<RoomObj> _listFall;
@@ -15,15 +14,21 @@ namespace RoomEscape
 
         void Awake()
         {
-            _listSpring = new List<RoomObj>(transform.Find("Room_Spring").GetComponentsInDirectChild<RoomObj>());
-            _listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
+            I = this;
+            Child = transform.childCount;
+            InitRoom();
+            //_listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
             //_listWinter = new List<RoomObj>(transform.Find("Room_Winter").GetComponentsInChildren<RoomObj>());
         }
 
-        public void Init()
+        public void InitRoom()
         {
-            
+            Transform room = transform.Find("Room_Spring");
+            for (int i = 0; i < room.childCount; i++)
+            {
+                _listSpring.AddRange(room.GetChild(i).GetComponentsInDirectChild<RoomObj>());
+            }
         }
 
         public void OnClick_BackBtn()  // 뒤로가기 버튼을 눌렀을때 자신이 있는방의 RoomObj들만 함수 실행
@@ -53,5 +58,6 @@ namespace RoomEscape
                 roomObj.OnClick_BackBtn();
             }
         }
+
     }
 }
