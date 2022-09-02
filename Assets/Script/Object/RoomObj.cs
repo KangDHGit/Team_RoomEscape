@@ -46,22 +46,18 @@ namespace RoomEscape
                     SetCol(false);
                     CameraManager.I._isZoom = true;
                     ListSetCol(_list_Item, true);
+                    UIManager.I.OnChangeView(false);
                 }
             }
         }
 
         public virtual void OnClick_BackBtn()
         {
-            if (_objZCam != null)
-            {
-                if (_objZCam.gameObject.activeSelf)
-                {
-                    _objZCam.SetActive(false);
-                    SetCol(true);
-                    CameraManager.I._isZoom = false;
-                    ListSetCol(_list_Item, false);
-                }
-            }
+            _objZCam.SetActive(false);
+            SetCol(true);
+            CameraManager.I._isZoom = false;
+            ListSetCol(_list_Item, false);
+            UIManager.I.OnChangeView(true);
         }
 
         public T[] GetComponentsInDirectChild<T>() where T : MonoBehaviour

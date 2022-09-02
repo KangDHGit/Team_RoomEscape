@@ -7,7 +7,6 @@ namespace RoomEscape
     public class RoomObjManager : MonoBehaviour
     {
         public RoomObjManager I;
-
         public List<RoomObj> _listSpring;
         public List<RoomObj> _listSummer;
         public List<RoomObj> _listFall;
@@ -15,15 +14,20 @@ namespace RoomEscape
 
         void Awake()
         {
-            _listSpring = new List<RoomObj>(transform.Find("Room_Spring").GetComponentsInDirectChild<RoomObj>());
-            _listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
+            I = this;
+            InitRoom();
+            //_listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
             //_listWinter = new List<RoomObj>(transform.Find("Room_Winter").GetComponentsInChildren<RoomObj>());
         }
 
-        public void Init()
+        public void InitRoom()
         {
-            
+            Transform room = transform.Find("Room_Spring");
+            for (int i = 0; i < room.childCount; i++)
+            {
+                _listSpring.AddRange(room.GetChild(i).GetComponentsInDirectChild<RoomObj>());
+            }
         }
 
         public void OnClick_BackBtn()  // 뒤로가기 버튼을 눌렀을때 자신이 있는방의 RoomObj들만 함수 실행
@@ -48,10 +52,17 @@ namespace RoomEscape
         }
         void OnClick_BackBtn_List(List<RoomObj> list)   //리스트 안의 RoomObj별 OnClick_BackBtn함수 실행
         {
-            foreach (var roomObj in list)
+            foreach (RoomObj roomObj in list)
             {
-                roomObj.OnClick_BackBtn();
+                if (roomObj._objZCam != null)
+                {
+                    if (roomObj._objZCam.activeSelf)
+                    {
+                        roomObj.OnClick_BackBtn();
+                    }
+                }
             }
         }
+
     }
 }
