@@ -18,12 +18,12 @@ namespace Test_RoomEscape
         {
             if (_solution[0] == _input[0] && _solution[1] == _input[1] && _solution[2] == _input[2] && _solution[3] == _input[3])
             {
-                Debug.Log("Á¤´ä");
+                Debug.Log("ì •ë‹µ");
             }
             else
             {
-                Debug.Log("¿À´ä");
-                _input = null; // ¿À´ä½Ã¿¡´Â ÃÊ±âÈ­
+                Debug.Log("ì˜¤ë‹µ");
+                _input = null;
             }
         }
 
