@@ -15,7 +15,6 @@ namespace RoomEscape
         void Awake()
         {
             I = this;
-            Child = transform.childCount;
             InitRoom();
             //_listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
