@@ -9,7 +9,7 @@ public class ObjClick : MonoBehaviour
     protected Vector3 _camPos; //카메라를 옮길 위치
     public virtual void OnClickObj()
     {
-        Debug.Log("CamMove");
+        //Debug.Log("CamMove");
         _mainCam.transform.position = _camPos;
     }
 }

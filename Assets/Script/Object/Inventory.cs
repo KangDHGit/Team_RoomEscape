@@ -17,7 +17,7 @@ namespace RoomEscape
         public void AddItem(string itemname)
         {
             _itemList.Add(itemname);
-            Debug.Log("Inventory Add Success");
+            //Debug.Log("Inventory Add Success");
         }
     }
 }

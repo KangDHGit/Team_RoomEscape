@@ -21,7 +21,10 @@ namespace RoomEscape
                 CameraManager.I.SetMCam(_roomOut);
             }
             else
-                Debug.Log("Door is Close or Zoom Activate");
+            //Debug.Log("Door is Close or Zoom Activate");
+            {
+
+            }
         }
 
         public bool CheckItem(string itemName)

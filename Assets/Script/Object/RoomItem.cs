@@ -11,13 +11,13 @@ namespace RoomEscape
 
         private void OnMouseEnter()
         {
-            Debug.Log(_name);
+            //Debug.Log(_name);
         }
         private void OnMouseDown()
         {
             if (!CameraManager.I._isZoom)
                 return;
-            Debug.Log(_name + " Get!!!!");
+            //Debug.Log(_name + " Get!!!!");
             Inventory.I.AddItem(_name);
             gameObject.SetActive(false);
         }
