@@ -25,6 +25,7 @@ namespace RoomEscape
                 if (_objZCam.gameObject.activeSelf)
                 {
                     CameraManager.I._isZoom = true;
+                    UIManager.I.OnChangeView(false);
                 }
             }
         }

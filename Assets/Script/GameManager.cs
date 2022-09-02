@@ -14,6 +14,7 @@ namespace RoomEscape
         private void Start()
         {
             CameraManager.I.Init();
+            UIManager.I.Init();
         }
 
         public T[] GetComponentsInDirectChild<T>(Transform trans) where T : MonoBehaviour

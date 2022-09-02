@@ -46,6 +46,7 @@ namespace RoomEscape
                     SetCol(false);
                     CameraManager.I._isZoom = true;
                     ListSetCol(_list_Item, true);
+                    UIManager.I.OnChangeView(false);
                 }
             }
         }
@@ -60,6 +61,7 @@ namespace RoomEscape
                     SetCol(true);
                     CameraManager.I._isZoom = false;
                     ListSetCol(_list_Item, false);
+                    UIManager.I.OnChangeView(true);
                 }
             }
         }

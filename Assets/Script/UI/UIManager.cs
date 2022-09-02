@@ -10,17 +10,24 @@ namespace RoomEscape
     {
         public static UIManager I;
 
+        [SerializeField] GameObject _obj_Btn_Left;
+        [SerializeField] GameObject _obj_Btn_Right;
+        [SerializeField] GameObject _obj_Btn_Down;
+
         private GraphicRaycaster _gRayCaster; //UI Raycast
 
         private void Awake()
         {
             I = this;
             _gRayCaster = GetComponent<GraphicRaycaster>();
+            _obj_Btn_Left = transform.Find("Btn_Left").gameObject;
+            _obj_Btn_Right = transform.Find("Btn_Right").gameObject;
+            _obj_Btn_Down = transform.Find("Btn_Down").gameObject;
         }
 
         public void Init()
         {
-
+            OnChangeView(true);
         }
 
         private void Update()
@@ -51,6 +58,13 @@ namespace RoomEscape
             {
                 return false;
             }
+        }
+
+        public void OnChangeView(bool isMainView) //true : 메인뷰 상태, false : 확대된 상태
+        {
+            _obj_Btn_Down.SetActive(!isMainView);
+            _obj_Btn_Right.SetActive(isMainView);
+            _obj_Btn_Left.SetActive(isMainView);
         }
     }
 }
