@@ -52,9 +52,15 @@ namespace RoomEscape
         }
         void OnClick_BackBtn_List(List<RoomObj> list)   //리스트 안의 RoomObj별 OnClick_BackBtn함수 실행
         {
-            foreach (var roomObj in list)
+            foreach (RoomObj roomObj in list)
             {
-                roomObj.OnClick_BackBtn();
+                if (roomObj._objZCam != null)
+                {
+                    if (roomObj._objZCam.activeSelf)
+                    {
+                        roomObj.OnClick_BackBtn();
+                    }
+                }
             }
         }
 

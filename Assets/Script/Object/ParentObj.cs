@@ -29,22 +29,16 @@ namespace RoomEscape
 
         public override void OnClick_BackBtn()
         {
-            if (_objZCam != null)
+            if (CheckOnChildCam())
             {
-                if (_objZCam.gameObject.activeSelf)
+                foreach (ChildObj obj in _list_ChildRoomObj)
                 {
-                    if (CheckOnChildCam())
-                    {
-                        foreach (ChildObj obj in _list_ChildRoomObj)
-                        {
-                            obj.OnClick_BackBtn();
-                        }
-                    }
-                    else
-                    {
-                        base.OnClick_BackBtn();
-                    }
+                    obj.OnClick_BackBtn();
                 }
+            }
+            else
+            {
+                base.OnClick_BackBtn();
             }
         }
 

@@ -20,14 +20,8 @@ namespace RoomEscape
         public override void OnClick_BackBtn()
         {
             base.OnClick_BackBtn();
-            if (_objZCam != null)
-            {
-                if (_objZCam.gameObject.activeSelf)
-                {
-                    CameraManager.I._isZoom = true;
-                    UIManager.I.OnChangeView(false);
-                }
-            }
+            CameraManager.I._isZoom = true;
+            UIManager.I.OnChangeView(false);
         }
     }
 }
