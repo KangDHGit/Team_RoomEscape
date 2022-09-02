@@ -18,6 +18,7 @@ namespace RoomEscape
         
         [SerializeField] protected Room _room; // 이 오브젝트가 속한 방
         [SerializeField] public GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
+        [SerializeField] Collider _col;
         public List<RoomItem> _list_Item;    // 오브젝트의 자식 아이템
 
         protected virtual void Start()
@@ -27,6 +28,8 @@ namespace RoomEscape
                 _objZCam = CameraManager.I.transform.Find($"{_room}/Cam_{gameObject.name}").gameObject;
                 if (_objZCam != null)
                     _objZCam.SetActive(false);
+
+                SetCol(true);
 
                 _list_Item = new List<RoomItem>(GetComponentsInChildren<RoomItem>());
                 ListSetCol(_list_Item, false);
@@ -40,7 +43,7 @@ namespace RoomEscape
                 if (_objZCam != null)
                 {
                     _objZCam.SetActive(true);
-                    GetComponent<Collider>().enabled = false;
+                    SetCol(false);
                     CameraManager.I._isZoom = true;
                     ListSetCol(_list_Item, true);
                 }
@@ -54,7 +57,8 @@ namespace RoomEscape
                 if (_objZCam.gameObject.activeSelf)
                 {
                     _objZCam.SetActive(false);
-                    GetComponent<Collider>().enabled = true;
+                    SetCol(true);
+                    CameraManager.I._isZoom = false;
                     ListSetCol(_list_Item, false);
                 }
             }
@@ -85,6 +89,14 @@ namespace RoomEscape
                         col.enabled = stat;
                 }
             }
+        }
+
+        public void SetCol(bool stat)
+        {
+            if (_col == null)
+                _col = GetComponent<Collider>();
+            if (_col != null)
+                _col.enabled = stat;
         }
     }
 }

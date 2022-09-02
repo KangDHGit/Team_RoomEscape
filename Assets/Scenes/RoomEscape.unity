@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4790759, g: 0.475721, b: 0.3905402, a: 1}
+  m_IndirectSpecularColor: {r: 0.47907633, g: 0.4757216, b: 0.3905406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4534,6 +4534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 1
   _objZCam: {fileID: 0}
+  _col: {fileID: 0}
   _list_Item: []
 --- !u!65 &1911813530
 BoxCollider:
@@ -76874,12 +76875,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 261423419558861492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3bb52aefcd5c34ab4b21142e6dd533, type: 3}
+  m_Script: {fileID: 11500000, guid: b206201db1fea114c86eec37904eeec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 0}
+  _col: {fileID: 0}
   _list_Item: []
+  _list_ChildRoomObj: []
 --- !u!33 &5507117878899847152
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94199,6 +94202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 1877825952}
+  _col: {fileID: 0}
   _list_Item: []
 --- !u!1 &6819871810929908299
 GameObject:
@@ -104094,6 +104098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 0}
+  _col: {fileID: 0}
   _list_Item: []
 --- !u!4 &7655586901715170852
 Transform:
@@ -119833,6 +119838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 865966542}
+  _col: {fileID: 0}
   _list_Item: []
 --- !u!23 &8881099796209289653
 MeshRenderer:

@@ -11,7 +11,7 @@ namespace RoomEscape
         protected override void Start()
         {
             base.Start();
-            _list_ChildRoomObj = new List<RoomObj>(GetComponentsInDirectChild<RoomObj>());
+            _list_ChildRoomObj = new List<RoomObj>(transform.GetComponentsInDirectChild<RoomObj>());
             ListSetCol(_list_ChildRoomObj, false);
         }
 
@@ -33,11 +33,19 @@ namespace RoomEscape
             {
                 if (_objZCam.gameObject.activeSelf)
                 {
-                    if(CheckOnChildCam())
-                        ListSetCol(_list_ChildRoomObj, false);
+                    if (CheckOnChildCam())
+                    {
+                        foreach (ChildObj obj in _list_ChildRoomObj)
+                        {
+                            obj.OnClick_BackBtn();
+                        }
+                    }
+                    else
+                    {
+                        base.OnClick_BackBtn();
+                    }
                 }
             }
-            base.OnClick_BackBtn();
         }
 
         bool CheckOnChildCam()
