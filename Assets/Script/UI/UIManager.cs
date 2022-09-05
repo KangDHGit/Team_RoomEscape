@@ -22,19 +22,20 @@ namespace RoomEscape
         private void Awake()
         {
             I = this;
-            _gRayCaster = GetComponent<GraphicRaycaster>();
-            _obj_Btn_Left = transform.Find("Btn_Left").gameObject;
-            _obj_Btn_Right = transform.Find("Btn_Right").gameObject;
-            _obj_Btn_Down = transform.Find("Btn_Down").gameObject;
-            _iven_Btn_Open = transform.Find("Iven_Btn_Open").gameObject;
+
+            _gRayCaster     = GetComponent<GraphicRaycaster>();
+            _obj_Btn_Left   = transform.Find("Btn_Left").gameObject;
+            _obj_Btn_Right  = transform.Find("Btn_Right").gameObject;
+            _obj_Btn_Down   = transform.Find("Btn_Down").gameObject;
+            _iven_Btn_Open  = transform.Find("Iven_Btn_Open").gameObject;
             _iven_Btn_Close = transform.Find("Iven_Btn_Closes").gameObject;
-            _iven_UI = transform.Find("UI_InvenTory").gameObject;
+            _iven_UI        = transform.Find("UI_InvenTory").gameObject;
         }
 
         public void Init()
         {
             OnChangeView(true);
-            OnOpenIvenBtn(false);
+            OnOpenIven  (false);
         }
 
         private void Update()
@@ -69,16 +70,16 @@ namespace RoomEscape
 
         public void OnChangeView(bool isMainView) //true : 메인뷰 상태, false : 확대된 상태
         {
-            _obj_Btn_Down.SetActive(!isMainView);
-            _obj_Btn_Right.SetActive(isMainView);
-            _obj_Btn_Left.SetActive(isMainView);
+            _obj_Btn_Down.  SetActive(!isMainView);
+            _obj_Btn_Right. SetActive(isMainView);
+            _obj_Btn_Left.  SetActive(isMainView);
         }
 
-        public void OnOpenIvenBtn(bool isOpen)
+        public void OnOpenIven(bool isOpen)
         {
-            _iven_Btn_Open.SetActive(!isOpen);
+            _iven_Btn_Open. SetActive(!isOpen);
             _iven_Btn_Close.SetActive(isOpen);
-            _iven_UI.SetActive(isOpen);
+            _iven_UI.       SetActive(isOpen);
         }
     }
 }
