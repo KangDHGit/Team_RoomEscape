@@ -6,7 +6,7 @@ namespace RoomEscape
 {
     public class RoomObjManager : MonoBehaviour
     {
-        public RoomObjManager I;
+        public static RoomObjManager I;
         public List<RoomObj> _listSpring;
         public List<RoomObj> _listSummer;
         public List<RoomObj> _listFall;
@@ -52,16 +52,13 @@ namespace RoomEscape
         }
         void OnClick_BackBtn_List(List<RoomObj> list)   //리스트 안의 RoomObj별 OnClick_BackBtn함수 실행
         {
+            bool isParentActive = false;
             foreach (RoomObj roomObj in list)
             {
-                if (roomObj._objZCam != null)
-                {
-                    if (roomObj._objZCam.activeSelf)
-                    {
-                        roomObj.OnClick_BackBtn();
-                    }
-                }
+                 if (roomObj.OnClick_BackBtn())
+                     isParentActive = true;
             }
+            UIManager.I.OnChangeView(!isParentActive);
         }
 
     }

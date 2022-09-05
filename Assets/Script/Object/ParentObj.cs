@@ -22,12 +22,13 @@ namespace RoomEscape
                 if (_objZCam != null)
                 {
                     ListSetCol(_list_ChildRoomObj, true);
+                    UIManager.I.OnChangeView(false);
+                    OnClick(true);
                 }
             }
-            base.OnMouseDown();
         }
 
-        public override void OnClick_BackBtn()
+        public override bool OnClick_BackBtn()
         {
             if (CheckOnChildCam())
             {
@@ -35,10 +36,12 @@ namespace RoomEscape
                 {
                     obj.OnClick_BackBtn();
                 }
+                return true;
             }
             else
             {
-                base.OnClick_BackBtn();
+                OnClick(false);
+                return false;
             }
         }
 

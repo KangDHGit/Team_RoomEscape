@@ -13,15 +13,26 @@ namespace RoomEscape
         }
         protected override void OnMouseDown()
         {
-            CameraManager.I._isZoom = false;
-            base.OnMouseDown();
+            if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
+            {
+                if (_objZCam != null)
+                {
+                    OnClick(true);
+                }
+            }
         }
 
-        public override void OnClick_BackBtn()
+        public override bool OnClick_BackBtn()
         {
-            base.OnClick_BackBtn();
-            CameraManager.I._isZoom = true;
-            UIManager.I.OnChangeView(false);
+            OnClick(false);
+            return false;
+        }
+        protected override void OnClick(bool stat) // true : MouseDown, false : BackBtn
+        {
+            _objZCam.SetActive(stat);
+            SetCol(!stat);
+            CameraManager.I._isZoom_Child = stat;
+            ListSetCol(_list_Item, stat);
         }
     }
 }
