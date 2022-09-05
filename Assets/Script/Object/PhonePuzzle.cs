@@ -23,7 +23,7 @@ namespace Test_RoomEscape
             else
             {
                 Debug.Log("오답");
-                _input = null;
+                _input.Clear();
             }
         }
 
