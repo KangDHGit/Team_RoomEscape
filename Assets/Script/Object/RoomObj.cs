@@ -21,7 +21,7 @@ namespace RoomEscape
         [SerializeField] Collider _col;
         public List<RoomItem> _list_Item;    // 오브젝트의 자식 아이템
 
-        protected virtual void Start()
+        public virtual void Init()
         {
             if (_room != Room.None)
             {

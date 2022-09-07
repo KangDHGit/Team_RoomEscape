@@ -6,9 +6,9 @@ namespace RoomEscape
 {
     public class ChildObj : RoomObj
     {
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             SetCol(false);
         }
         protected override void OnMouseDown()

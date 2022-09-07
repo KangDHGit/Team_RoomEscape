@@ -15,18 +15,27 @@ namespace RoomEscape
         void Awake()
         {
             I = this;
-            InitRoom();
             //_listSummer = new List<RoomObj>(transform.Find("Room_Summer").GetComponentsInDirectChild<RoomObj>());
             //_listFall = new List<RoomObj>(transform.Find("Room_Fall").GetComponentsInChildren<RoomObj>());
             //_listWinter = new List<RoomObj>(transform.Find("Room_Winter").GetComponentsInChildren<RoomObj>());
         }
 
-        public void InitRoom()
+        public void Init()
         {
             Transform room = transform.Find("Room_Spring");
             for (int i = 0; i < room.childCount; i++)
             {
                 _listSpring.AddRange(room.GetChild(i).GetComponentsInDirectChild<RoomObj>());
+            }
+
+            InitList(_listSpring);
+        }
+
+        void InitList<T>(ICollection<T> list) where T : RoomObj 
+        {
+            foreach (var roomObj in list)
+            {
+                roomObj.Init();
             }
         }
 

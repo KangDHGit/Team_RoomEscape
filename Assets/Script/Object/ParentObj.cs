@@ -8,10 +8,16 @@ namespace RoomEscape
     {
         public List<RoomObj> _list_ChildRoomObj; // 오브젝트의 자식 오브젝트
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             _list_ChildRoomObj = new List<RoomObj>(transform.GetComponentsInDirectChild<RoomObj>());
+
+            foreach (var childObj in _list_ChildRoomObj)
+            {
+                childObj.Init();
+            }
+
             ListSetCol(_list_ChildRoomObj, false);
         }
 

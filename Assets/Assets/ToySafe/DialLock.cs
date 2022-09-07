@@ -35,7 +35,7 @@ namespace RoomEscape
         }
 
         // Start is called before the first frame update
-        void Start()
+        public void Init()
         {
             _obj_Cam_DialSafeToy = transform.parent.GetComponent<RoomObj>()._objZCam.gameObject;
 
@@ -52,8 +52,6 @@ namespace RoomEscape
             _bulb[1] = transform.Find("Bulb/Bulb_2").GetComponent<Renderer>();
             _bulb[2] = transform.Find("Bulb/Bulb_3").GetComponent<Renderer>();
             _bulb[3] = transform.Find("Bulb/Bulb_4").GetComponent<Renderer>();
-
-
 
             ColorSeting();
         }
