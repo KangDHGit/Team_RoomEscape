@@ -16,21 +16,6 @@ namespace RoomEscape
             CameraManager.I.Init();
             UIManager.I.Init();
         }
-
-        public T[] GetComponentsInDirectChild<T>(Transform trans) where T : MonoBehaviour
-        {
-            List<T> list = new List<T>();
-            if (this.transform.childCount > 0)
-            {
-                foreach (Transform child in this.transform)
-                {
-                    if (child.TryGetComponent<T>(out T component))
-                        list.Add(component);
-                }
-            }
-            T[] array = list.ToArray();
-            return array;
-        }
     }
 
     public static class Exclass
