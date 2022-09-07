@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialLock : MonoBehaviour
 {
     public static DialLock I; //싱글턴
+    GameObject _obj_Cam_DialSafeToy;
 
     GameObject _dial;
 
