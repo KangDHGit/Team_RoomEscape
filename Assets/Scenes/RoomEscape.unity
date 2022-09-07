@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 526252868}
         m_TargetAssemblyTypeName: RoomEscape.UIManager, Assembly-CSharp
-        m_MethodName: OnOpenIvenBtn
+        m_MethodName: OnOpenIven
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2220,7 +2220,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 526252868}
         m_TargetAssemblyTypeName: RoomEscape.UIManager, Assembly-CSharp
-        m_MethodName: OnOpenIvenBtn
+        m_MethodName: OnOpenIven
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3041,7 +3041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc37053fa401d0468571996275ad4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  I: {fileID: 0}
   _listSpring: []
   _listSummer: []
   _listFall: []
@@ -4545,6 +4544,7 @@ MonoBehaviour:
   _objMCam_Now: {fileID: 0}
   _objMCam_List: []
   _isZoom: 0
+  _isZoom_Child: 0
 --- !u!1 &1750906149
 GameObject:
   m_ObjectHideFlags: 0
