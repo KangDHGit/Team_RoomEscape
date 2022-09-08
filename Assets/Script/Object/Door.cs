@@ -23,7 +23,19 @@ namespace RoomEscape
 
         void Debuglog(string str)
         {
+            _isLocked = false;
             Debug.Log(str);
+            _isLocked = false;
+            Debug.Log(str);
+            Debug.Log(str);
+            _isLocked = false;
+            Debug.Log(str);
+            Debug.Log(str);
+            Debug.Log(str);
+            Debug.Log(str);
+            Debug.Log(str);
+
+            _isLocked = false;
         }
 
         private void OnMouseDown()
