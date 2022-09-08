@@ -15,7 +15,7 @@ namespace RoomEscape
         [SerializeField] GameObject _obj_Btn_Down;
         GameObject _iven_Btn_Open;
         GameObject _iven_Btn_Close;
-        GameObject _iven_UI;
+        public UI_Inventory _iven_UI;
 
         private GraphicRaycaster _gRayCaster; //UI Raycast
 
@@ -29,7 +29,7 @@ namespace RoomEscape
             _obj_Btn_Down   = transform.Find("Btn_Down").gameObject;
             _iven_Btn_Open  = transform.Find("Iven_Btn_Open").gameObject;
             _iven_Btn_Close = transform.Find("Iven_Btn_Closes").gameObject;
-            _iven_UI        = transform.Find("UI_InvenTory").gameObject;
+            _iven_UI        = transform.Find("UI_InvenTory").GetComponent<UI_Inventory>();
         }
 
         public void Init()
@@ -77,9 +77,9 @@ namespace RoomEscape
 
         public void OnOpenIven(bool isOpen)
         {
-            _iven_Btn_Open. SetActive(!isOpen);
-            _iven_Btn_Close.SetActive(isOpen);
-            _iven_UI.       SetActive(isOpen);
+            _iven_Btn_Open.     SetActive(!isOpen);
+            _iven_Btn_Close.    SetActive(isOpen);
+            _iven_UI.gameObject.SetActive(isOpen);
         }
     }
 }

@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace RoomEscape
 {
+
+    public class ItemInfo
+    {
+        [SerializeField] string _names;
+        [SerializeField] int _count;
+    }
     public class Inventory : MonoBehaviour
     {
         public static Inventory I;
@@ -14,9 +20,15 @@ namespace RoomEscape
             I = this;
         }
 
-        public void AddItem(string itemname)
+        public void AddItem(string itemName)
         {
-            _itemList.Add(itemname);
+            if (_itemList.Contains(itemName) == false)
+            {
+                _itemList.Add(itemName);
+
+                UIManager.I._iven_UI.Add(itemName);
+            }
+            
             //Debug.Log("Inventory Add Success");
         }
     }

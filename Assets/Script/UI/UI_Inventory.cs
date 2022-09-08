@@ -3,20 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace TinyTower
+namespace RoomEscape
 {
-  public class UI_Inventory : MonoBehaviour
-  {
-      // Start is called before the first frame update
-      void Start()
-      {
-          
-      }
-  
-      // Update is called once per frame
-      void Update()
-      {
-          
-      }
-  }
+    public class UI_Inventory : MonoBehaviour
+    {
+        public static UI_Inventory I;
+        public GameObject _itemTemplate;
+
+        void Awake()
+        {
+            I = this;
+
+            _itemTemplate = transform.Find("UI_InvenItem").gameObject;
+            _itemTemplate.SetActive(false);
+        }
+        public void Init()
+        {
+
+            for (int i = 0; i < Inventory.I._itemList.Count; i++)
+            {
+                string itemName = Inventory.I._itemList[i];
+
+                Add(itemName);
+            }
+            this.gameObject.SetActive(false);
+        }
+
+        public void Add(string itemName)
+        {
+            GameObject clone = Instantiate(_itemTemplate);
+            clone.transform.parent = _itemTemplate.transform.parent;
+            clone.SetActive(true);
+
+            UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
+            ivenItem.Info(itemName);
+        }
+
+
+    }
 }

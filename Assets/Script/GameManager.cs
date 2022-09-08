@@ -14,10 +14,11 @@ namespace RoomEscape
 
         private void Start()
         {
-            RoomObjManager.I.Init();
-            CameraManager.I.Init();
-            UIManager.I.Init();
-            DialLock.I.Init();
+            RoomObjManager. I.Init();
+            CameraManager.  I.Init();
+            DialLock.       I.Init();
+            UIManager.      I.Init();
+            UI_Inventory.   I.Init();
         }
     }
 

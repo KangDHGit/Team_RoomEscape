@@ -6,7 +6,7 @@ namespace RoomEscape
 {
     public class RoomItem : MonoBehaviour
     {
-        public string _name;
+        public string _name = "";
         Collider _col;
 
         private void OnMouseEnter()
@@ -18,8 +18,13 @@ namespace RoomEscape
             if (!CameraManager.I._isZoom)
                 return;
             //Debug.Log(_name + " Get!!!!");
-            Inventory.I.AddItem(_name);
-            gameObject.SetActive(false);
+            if (UIManager.I.CheckClickUI() == false)
+            {
+                Inventory.I.AddItem(_name);
+
+                gameObject.SetActive(false);
+            }
+
         }
 
         public void SetCol(bool stat)
