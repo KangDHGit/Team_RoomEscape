@@ -39,6 +39,11 @@ namespace RoomEscape
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("hello trigger");
+        }
+
         public bool CheckItem(string itemName)
         {
             if(_requireItemName == itemName)
@@ -51,6 +56,13 @@ namespace RoomEscape
             {
                 return false;
             }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("hello collision!!");
+
+            return;
         }
     }
 }
