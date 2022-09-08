@@ -14,6 +14,13 @@ namespace RoomEscape
         // 조건만족 여부
         bool _satisfaction = false;
 
+        bool _isLocked = false;
+
+        private void Start()
+        {
+            _isLocked = false;
+        }
+
         private void OnMouseDown()
         {
             if(_satisfaction && !CameraManager.I._isZoom)
