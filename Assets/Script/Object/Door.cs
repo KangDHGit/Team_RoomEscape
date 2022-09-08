@@ -24,6 +24,13 @@ namespace RoomEscape
         void Debuglog(string str)
         {
             Debug.Log(str);
+            Debug.Log(str);
+            Debug.Log(str);
+            Debug.Log("다르다아");
+            Debug.Log("다르다아");
+            Debug.Log("다르다아");
+            Debug.Log("다르다아");
+            Debug.Log("다르다아");
         }
 
         private void OnMouseDown()
