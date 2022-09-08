@@ -31,6 +31,7 @@ namespace RoomEscape
 
         public void Add(string itemName)
         {
+            
             GameObject clone = Instantiate(_itemTemplate);
             clone.transform.parent = _itemTemplate.transform.parent;
             clone.SetActive(true);

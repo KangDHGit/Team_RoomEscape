@@ -25,8 +25,7 @@ namespace RoomEscape
             if (_itemList.Contains(itemName) == false)
             {
                 _itemList.Add(itemName);
-
-                UIManager.I._iven_UI.Add(itemName);
+                UI_Inventory.I.Add(itemName);
             }
             
             //Debug.Log("Inventory Add Success");
