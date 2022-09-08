@@ -21,6 +21,11 @@ namespace RoomEscape
             _isLocked = false;
         }
 
+        void Debuglog(string str)
+        {
+            Debug.Log(str);
+        }
+
         private void OnMouseDown()
         {
             if(_satisfaction && !CameraManager.I._isZoom)
