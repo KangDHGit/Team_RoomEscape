@@ -31,7 +31,7 @@ namespace RoomEscape
 
                 SetCol(true);
 
-                _list_Item = new List<RoomItem>(GetComponentsInChildren<RoomItem>());
+                _list_Item = new List<RoomItem>(transform.GetComponentsInDirectChild<RoomItem>());
                 ListSetCol(_list_Item, false);
             }
         }
