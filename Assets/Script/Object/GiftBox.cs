@@ -7,7 +7,7 @@ namespace RoomEscape
     public class GiftBox : ChildObj
     {
         [SerializeField] GameObject _cover;
-        [SerializeField] GameObject _obj_Paper;
+        [SerializeField] GameObject _obj_Paper; //Hint_Paper(GiftBox)
         bool _isopen = false; public bool IsOpen { get { return _isopen; } }
 
         Vector3 _openPos = new Vector3(0, -0.07f, 0.108f);
@@ -18,7 +18,7 @@ namespace RoomEscape
             base.Init();
             _cover = transform.parent.Find("GiftBox_Cover").gameObject;
             _obj_Paper = transform.Find("Hint_Paper(GiftBox)").gameObject;
-            //_obj_Paper.GetComponent<Hint_GiftBox>().Init();
+            _obj_Paper.GetComponent<Hint_GiftBox>().Init();
             _obj_Paper.SetActive(false);
         }
         protected override void OnMouseDown()

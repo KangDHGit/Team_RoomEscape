@@ -6,17 +6,18 @@ namespace RoomEscape
 {
     public class Hint_GiftBox : MonoBehaviour
     {
-        //public Collider _col; 
-        //public void Init()
-        //{
-        //    _col = GetComponent<Collider>();
-        //    if(_col != null)
-        //        _col.enabled = false;
-        //}
+        GameObject _circleCheck;
+        public void Init()
+        {
+            _circleCheck = RoomObjManager.I.transform.Find("Room_Spring/West/Calendar/CircleCheck").gameObject;
+            if (_circleCheck != null)
+                _circleCheck.SetActive(false);
+        }
 
         private void OnMouseDown()
         {
             UIManager.I.Set_Ui_Hint_GiftBox(true);
+            _circleCheck.SetActive(true);
         }
     }
 }
