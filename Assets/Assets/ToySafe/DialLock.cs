@@ -66,10 +66,11 @@ namespace RoomEscape
             {
                 if (Input.GetMouseButton(0))//마우스 클릭중 다이얼 각도 변환
                 {
-                    float yRot = -Input.GetAxis("Mouse Y") * speed;
+                    float yRot = -Input.GetAxis("Mouse X") * speed;
 
                     Debug.Log("yRot: " + yRot);
 
+                    /*
                     if (yRot > 0.0f)
                     {
                         _rightMoving = true;
@@ -80,7 +81,7 @@ namespace RoomEscape
                     {
                         _rightMoving = false;
                         _leftMoving = true;
-                    }
+                    }*/
 
                     _dial.transform.Rotate(0f, 0f, yRot);
                 }
@@ -175,6 +176,8 @@ namespace RoomEscape
 
             return _nowAngle;
         }
+
+
     }
 }
 
