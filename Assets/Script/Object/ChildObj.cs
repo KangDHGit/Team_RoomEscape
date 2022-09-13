@@ -11,7 +11,7 @@ namespace RoomEscape
             base.Init();
             SetCol(false);
         }
-        protected override void OnMouseDown()
+        protected override void OnMouseUp()
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
             {

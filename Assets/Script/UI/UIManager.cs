@@ -92,7 +92,7 @@ namespace RoomEscape
         }
         public void Set_Ui_Hint_Binoculars(bool stat)
         {
-            _ui_Hint_GiftBox.SetActive(stat);
+            _ui_Hint_Binoculars.SetActive(stat);
         }
     }
 }

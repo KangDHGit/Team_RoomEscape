@@ -15,9 +15,9 @@ namespace RoomEscape
             base.Init();
             _cover = transform.Find("Base/Cover").gameObject;
         }
-        protected override void OnMouseDown()
+        protected override void OnMouseUp()
         {
-            base.OnMouseDown();
+            base.OnMouseUp();
             if(_cover != null && !_isopen)
             {
                 _cover.transform.Rotate(_openRot);

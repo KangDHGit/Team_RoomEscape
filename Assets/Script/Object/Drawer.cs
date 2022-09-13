@@ -17,10 +17,12 @@ namespace RoomEscape
             _closePos = transform.localPosition;
         }
 
-        protected override void OnMouseDown()
+        protected override void OnMouseUp()
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
             {
+                if (_isOpen && Hint_Pink_Drawers.I.RayCheckHint())
+                    return;
                 OnClick(true);
                 MoveDrawer();
             }

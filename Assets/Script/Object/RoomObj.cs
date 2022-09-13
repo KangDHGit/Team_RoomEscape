@@ -36,7 +36,7 @@ namespace RoomEscape
             }
         }
 
-        protected virtual void OnMouseDown()
+        protected virtual void OnMouseUp()
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom)
             {

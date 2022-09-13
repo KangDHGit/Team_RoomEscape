@@ -21,7 +21,7 @@ namespace RoomEscape
             _obj_Paper.GetComponent<Hint_GiftBox>().Init();
             _obj_Paper.SetActive(false);
         }
-        protected override void OnMouseDown()
+        protected override void OnMouseUp()
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
             {
