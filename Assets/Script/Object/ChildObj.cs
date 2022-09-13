@@ -15,10 +15,7 @@ namespace RoomEscape
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
             {
-                if (_objZCam != null)
-                {
-                    OnClick(true);
-                }
+                OnClick(true);
             }
         }
 
@@ -29,7 +26,10 @@ namespace RoomEscape
         }
         protected override void OnClick(bool stat) // true : MouseDown, false : BackBtn
         {
-            _objZCam.SetActive(stat);
+            if (_objZCam != null)
+            {
+                _objZCam.SetActive(stat);
+            }
             SetCol(!stat);
             CameraManager.I._isZoom_Child = stat;
             ListSetCol(_list_Item, stat);

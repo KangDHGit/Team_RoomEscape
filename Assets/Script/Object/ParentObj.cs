@@ -47,6 +47,7 @@ namespace RoomEscape
             else
             {
                 OnClick(false);
+                ListSetCol(_list_ChildRoomObj, false);
                 return false;
             }
         }
@@ -57,11 +58,14 @@ namespace RoomEscape
                 return false;
             foreach (RoomObj roomObj in _list_ChildRoomObj)
             {
-                if (roomObj._objZCam.activeSelf)
-                    return true;
-                else if (!roomObj._objZCam.activeSelf)
+                if (roomObj._objZCam != null)
                 {
-                    continue;
+                    if (roomObj._objZCam.activeSelf)
+                        return true;
+                    else if (!roomObj._objZCam.activeSelf)
+                    {
+                        continue;
+                    }
                 }
             }
             return false;
