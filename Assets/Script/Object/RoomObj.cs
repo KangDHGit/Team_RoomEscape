@@ -21,6 +21,8 @@ namespace RoomEscape
         [SerializeField] Collider _col;
         public List<RoomItem> _list_Item;    // 오브젝트의 자식 아이템
 
+        public bool _lock = false;
+
         public virtual void Init()
         {
             if (_room != Room.None)
@@ -59,10 +61,13 @@ namespace RoomEscape
 
         protected virtual void OnClick(bool stat) // true : MouseDown, false : BackBtn
         {
-            _objZCam.SetActive(stat);
-            SetCol(!stat);
-            CameraManager.I._isZoom = stat;
-            ListSetCol(_list_Item, stat);
+            if (!_lock)
+            {
+                _objZCam.SetActive(stat);
+                SetCol(!stat);
+                CameraManager.I._isZoom = stat;
+                ListSetCol(_list_Item, stat);
+            }
         }
 
         public void ListSetCol<T>(List<T> list, bool stat) where T : MonoBehaviour

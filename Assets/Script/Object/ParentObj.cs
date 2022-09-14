@@ -27,9 +27,12 @@ namespace RoomEscape
             {
                 if (_objZCam != null)
                 {
-                    ListSetCol(_list_ChildRoomObj, true);
-                    UIManager.I.OnChangeView(false);
-                    OnClick(true);
+                    if (!_lock)
+                    {
+                        ListSetCol(_list_ChildRoomObj, true);
+                        UIManager.I.OnChangeView(false);
+                        OnClick(true);
+                    }
                 }
             }
         }

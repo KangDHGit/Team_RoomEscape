@@ -15,7 +15,10 @@ namespace RoomEscape
         {
             if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom_Child)
             {
-                OnClick(true);
+                if (!_lock)
+                {
+                    OnClick(true);
+                }
             }
         }
 
