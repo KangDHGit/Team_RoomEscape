@@ -35,6 +35,7 @@ namespace RoomEscape
 
                 _list_Item = new List<RoomItem>(transform.GetComponentsInDirectChild<RoomItem>());
                 ListSetCol(_list_Item, false);
+                List_ItemInit();
             }
         }
 
@@ -82,6 +83,16 @@ namespace RoomEscape
             }
         }
 
+        public void List_ItemInit()
+        {
+            if(_list_Item != null)
+            {
+                foreach (RoomItem item in _list_Item)
+                {
+                    item.Init();
+                }
+            }
+        }
         public void SetCol(bool stat)
         {
             if (_col == null)

@@ -9,11 +9,16 @@ namespace RoomEscape
         public string _name = "";
         Collider _col;
 
-        private void OnMouseEnter()
+        public virtual void Init()
+        {
+
+        }
+
+        protected virtual void OnMouseEnter()
         {
             //Debug.Log(_name);
         }
-        private void OnMouseDown()
+        protected virtual void OnMouseDown()
         {
             if (!CameraManager.I._isZoom)
                 return;
