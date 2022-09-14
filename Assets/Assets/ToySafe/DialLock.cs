@@ -70,7 +70,7 @@ namespace RoomEscape
 
                     Debug.Log("yRot: " + yRot);
 
-                    /*
+                    
                     if (yRot > 0.0f)
                     {
                         _rightMoving = true;
@@ -81,7 +81,7 @@ namespace RoomEscape
                     {
                         _rightMoving = false;
                         _leftMoving = true;
-                    }*/
+                    }
 
                     _dial.transform.Rotate(0f, 0f, yRot);
                 }
