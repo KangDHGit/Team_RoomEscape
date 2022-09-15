@@ -8,20 +8,10 @@ namespace RoomEscape
     {
         private void OnTriggerEnter(Collider other)
         {
-            if (other.name == "Right_Side")
-            {
-                DialLock.I._rightMoving = true;
-                DialLock.I._leftMoving = false;
-                //_rightMoving = true;
-                //_leftMoving = false;
-            }
-            if (other.name == "Left_Side")
-            {
-                DialLock.I._rightMoving = false;
-                DialLock.I._leftMoving = true;
-                //_rightMoving = false;
-                //_leftMoving = true;
-            }
+            if (other.gameObject.name.Contains("Right"))
+                DialLock.I._isRightMoving = true;
+            if (other.gameObject.name.Contains("Left"))
+                DialLock.I._isRightMoving = false;
         }
     }
 }

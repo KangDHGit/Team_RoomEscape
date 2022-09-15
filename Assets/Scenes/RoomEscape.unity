@@ -88886,6 +88886,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password.Array.data[0]
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password.Array.data[1]
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password.Array.data[2]
+      value: 252
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password_bool.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password_bool.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password_bool.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887798909577319312, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
+      propertyPath: _password_bool.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
 --- !u!1 &7425181016947258767

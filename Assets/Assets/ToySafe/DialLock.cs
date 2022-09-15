@@ -24,8 +24,7 @@ namespace RoomEscape
 
         private float speed = 10f;
 
-        public bool _leftMoving = false;
-        public bool _rightMoving = false;
+        public bool _isRightMoving = false;
 
         public bool _onDial = false;
 
@@ -39,8 +38,7 @@ namespace RoomEscape
         {
             _obj_Cam_DialSafeToy = transform.parent.GetComponent<RoomObj>()._objZCam.gameObject;
 
-            _leftMoving = false;
-            _rightMoving = false;
+            _isRightMoving = false;
 
             _dial = transform.Find("Cube.003/Dial").gameObject;
 
@@ -61,29 +59,13 @@ namespace RoomEscape
         // Update is called once per frame
         void Update()
         {
-            //if (_onDial == true)//다이얼 움직임을 막음
             if(_obj_Cam_DialSafeToy.activeSelf)
             {
                 if (Input.GetMouseButton(0))//마우스 클릭중 다이얼 각도 변환
                 {
-                    float yRot = -Input.GetAxis("Mouse X") * speed;
+                    float xRot = Input.GetAxis("Mouse X") * speed;
 
-                    Debug.Log("yRot: " + yRot);
-
-                    
-                    if (yRot > 0.0f)
-                    {
-                        _rightMoving = true;
-                        _leftMoving = false;
-                    }
-
-                    if (yRot < 0.0f)
-                    {
-                        _rightMoving = false;
-                        _leftMoving = true;
-                    }
-
-                    _dial.transform.Rotate(0f, 0f, yRot);
+                    _dial.transform.Rotate(0f, 0f, xRot);
                 }
                 if (Input.GetMouseButtonUp(0))//마우스 땠을시
                 {
@@ -97,7 +79,7 @@ namespace RoomEscape
                     _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f + _setAngle);
 
                     //비밀번호와 대조후 정답 판정
-                    if (_setAngle == _password[index] && _rightMoving == _password_bool[index])
+                    if (_setAngle == _password[index] && _isRightMoving == _password_bool[index])
                     {
                         _clear[index] = true;
                         _bulb[index].sharedMaterial = _bulbColor[0];
@@ -106,6 +88,8 @@ namespace RoomEscape
                             ToySafe.I.DoorOpen();
                         else
                             index++;
+
+                        _dial.transform.rotation = Quaternion.Euler(180f, 0f, 180f);
 
                     }
                     else
@@ -122,10 +106,7 @@ namespace RoomEscape
                         ColorSeting();
                     }
 
-
-
-                    _leftMoving = false;
-                    _rightMoving = false;
+                    _isRightMoving = false;
 
                 }
             }
