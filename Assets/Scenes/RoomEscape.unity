@@ -784,7 +784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531565412}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -3.3449, y: 0.5843, z: -1.2575}
+  m_LocalPosition: {x: -3.3449, y: 0.266, z: -1.2575}
   m_LocalScale: {x: 0.2, y: 0.1, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2786,6 +2786,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1650273296}
+    - target: {fileID: 2283468037597860459, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4305304351327356404, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2800,6 +2804,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305304351327356404, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727592622867806698, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -49187,6 +49195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pink_drawers
       objectReference: {fileID: 0}
+    - target: {fileID: 7867166764560155259, guid: eee47e28f34fd4544aa1cd7aede8d2af, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 707557e0cef2fce49870d84a8e2ae9ae, type: 2}
     - target: {fileID: 9015843938990556585, guid: eee47e28f34fd4544aa1cd7aede8d2af, type: 3}
       propertyPath: m_RootOrder
       value: 4
