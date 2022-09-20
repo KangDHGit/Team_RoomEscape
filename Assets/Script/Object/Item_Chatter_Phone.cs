@@ -6,7 +6,6 @@ namespace RoomEscape
 {
     public class Item_Chatter_Phone : RoomItem
     {
-        Collider _col;
         GameObject _obj_Chatter_Phone;
 
         public override void Init()
