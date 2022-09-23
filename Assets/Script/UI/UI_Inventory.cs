@@ -7,7 +7,6 @@ namespace RoomEscape
 {
     public class UI_Inventory : MonoBehaviour
     {
-        public Sprite _testSp;
         public static UI_Inventory I;
         public GameObject _itemTemplate;
 
@@ -27,19 +26,7 @@ namespace RoomEscape
 
                 Add(itemName);
             }
-            Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
-            for (int i = 0; i < spList.Length; i++)
-            {
-                Sprite sp = spList[i];
-                if (sp.name == RoomItem.I._name)
-                {
-                    _testSp = sp;
-                    break;
-                }
-            }
-            {
 
-            }
             this.gameObject.SetActive(false);
         }
 

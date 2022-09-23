@@ -57,9 +57,8 @@ namespace RoomEscape
         {
             _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
 
-
             _txt_ItemName.text = itemName;
         }
-        
+
     }
 }
