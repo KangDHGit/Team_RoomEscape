@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108062716}
-  - component: {fileID: 108062717}
   m_Layer: 0
   m_Name: Train_WrongOut
   m_TagString: Untagged
@@ -153,21 +152,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &108062717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108062715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &249109659
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +263,7 @@ GameObject:
   - component: {fileID: 258745675}
   - component: {fileID: 258745676}
   m_Layer: 0
-  m_Name: ToyTrain
+  m_Name: Train_In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,15 +276,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258745673}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -8.025, y: 0.149, z: -3.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 880102058}
   m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &258745675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -321,10 +307,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 258745673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e5a44cd844d41b419960088ac47ca5a, type: 3}
+  m_Script: {fileID: 11500000, guid: b206201db1fea114c86eec37904eeec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trainIn: {fileID: 0}
+  _room: 0
+  _objZCam: {fileID: 0}
+  _col: {fileID: 0}
+  _list_Item: []
+  _lock: 0
+  _list_ChildRoomObj: []
 --- !u!1 &531565412
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &650815225
 BoxCollider:
@@ -560,11 +551,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f6715f2fdc4f942a7cd8909d96bc7b, type: 3}
+--- !u!1 &880102057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6149673845143081234, guid: 32f6715f2fdc4f942a7cd8909d96bc7b, type: 3}
+  m_PrefabInstance: {fileID: 860352156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &880102058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6778998719673256872, guid: 32f6715f2fdc4f942a7cd8909d96bc7b, type: 3}
   m_PrefabInstance: {fileID: 860352156}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &880102061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880102057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5a44cd844d41b419960088ac47ca5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trainIn: {fileID: 0}
+  _trainOut: {fileID: 0}
+  _trainWrongOut: {fileID: 0}
+  _magnet: 0
+  _battery1: 0
+  _battery2: 0
+  _hint: 0
+  _in: 0
+  _out: 0
+--- !u!65 &880102062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880102057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8784235, y: 0.771056, z: 0.60259414}
+  m_Center: {x: 0.060788527, y: 0, z: 0}
 --- !u!1 &1077900213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,70 +1484,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0416846, y: 1.9836863, z: 0.5493264}
   m_Center: {x: -0.00000047683716, y: 0.99184734, z: -0.000000014901161}
---- !u!1 &2124266348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2124266349}
-  - component: {fileID: 2124266350}
-  - component: {fileID: 2124266351}
-  m_Layer: 0
-  m_Name: Train_In
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2124266349
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124266348}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.025, y: 0.149, z: -3.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2124266350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124266348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b206201db1fea114c86eec37904eeec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _room: 0
-  _objZCam: {fileID: 0}
-  _col: {fileID: 0}
-  _list_Item: []
-  _lock: 0
-  _list_ChildRoomObj: []
---- !u!65 &2124266351
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124266348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &3987784378305587
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8101,7 +8067,6 @@ Transform:
   - {fileID: 1161477389986924427}
   - {fileID: 7162283881862437397}
   - {fileID: 8379567138222146063}
-  - {fileID: 2124266349}
   - {fileID: 650815224}
   - {fileID: 108062716}
   - {fileID: 258745674}
