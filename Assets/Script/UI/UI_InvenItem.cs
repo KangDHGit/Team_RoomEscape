@@ -14,16 +14,16 @@ namespace RoomEscape
 
         private void Start()
         {
-            _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
-            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
-            _vecImgOrigin = _imgItem.transform.localPosition;
+            //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
+            //_imgItem = transform.Find("Img_Item").GetComponent<Image>();
+            //_vecImgOrigin = _imgItem.transform.localPosition;
         }
 
         public void Init()
         {
-            _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
-            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
-            _vecImgOrigin = _imgItem.transform.localPosition;
+            //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
+            //_imgItem = transform.Find("Img_Item").GetComponent<Image>();
+            //_vecImgOrigin = _imgItem.transform.localPosition;
         }
         //public void DragItem()
         //{
@@ -56,6 +56,7 @@ namespace RoomEscape
         public void Info(string itemName)
         {
             _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
+
 
             _txt_ItemName.text = itemName;
         }

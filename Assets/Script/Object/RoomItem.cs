@@ -6,9 +6,14 @@ namespace RoomEscape
 {
     public class RoomItem : MonoBehaviour
     {
+        public static RoomItem I;
         public string _name = "";
         Collider _col;
 
+        void Awake()
+        {
+            I = this;
+        }
         public virtual void Init()
         {
 
