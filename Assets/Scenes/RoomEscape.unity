@@ -83461,6 +83461,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5506957511376582422}
     m_Modifications:
+    - target: {fileID: 1847830147958250082, guid: 7ecda209c781f5143971c172b8dd9e26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4896
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847830147958250082, guid: 7ecda209c781f5143971c172b8dd9e26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847830147958250082, guid: 7ecda209c781f5143971c172b8dd9e26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4597
+      objectReference: {fileID: 0}
     - target: {fileID: 3879322278339334215, guid: 7ecda209c781f5143971c172b8dd9e26, type: 3}
       propertyPath: m_Name
       value: Toy_Chest
