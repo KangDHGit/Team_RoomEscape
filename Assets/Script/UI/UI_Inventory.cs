@@ -27,15 +27,15 @@ namespace RoomEscape
 
                 Add(itemName);
             }
-            Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
-            for (int i = 0; i < spList.Length; i++)
-            {
-                Sprite sp = spList[i];
-                if ()
-                {
+            //Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
+            //for (int i = 0; i < spList.Length; i++)
+            //{
+            //    Sprite sp = spList[i];
+            //    if ()
+            //    {
 
-                }
-            }
+            //    }
+            //}
             {
 
             }
@@ -44,7 +44,7 @@ namespace RoomEscape
 
         public void Add(string itemName)
         {
-            
+
             GameObject clone = Instantiate(_itemTemplate);
             clone.transform.parent = _itemTemplate.transform.parent;
             clone.SetActive(true);
