@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &108062717
 BoxCollider:
@@ -275,6 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258745674}
   - component: {fileID: 258745675}
+  - component: {fileID: 258745676}
   m_Layer: 0
   m_Name: ToyTrain
   m_TagString: Untagged
@@ -296,7 +297,7 @@ Transform:
   m_Children:
   - {fileID: 880102058}
   m_Father: {fileID: 543450652367837078}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &258745675
 BoxCollider:
@@ -311,6 +312,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &258745676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258745673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5a44cd844d41b419960088ac47ca5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trainIn: {fileID: 0}
 --- !u!1 &531565412
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,8 +8103,8 @@ Transform:
   - {fileID: 8379567138222146063}
   - {fileID: 2124266349}
   - {fileID: 650815224}
-  - {fileID: 258745674}
   - {fileID: 108062716}
+  - {fileID: 258745674}
   m_Father: {fileID: 1627026635}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
