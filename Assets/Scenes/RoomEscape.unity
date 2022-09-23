@@ -1202,9 +1202,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -318702557350241834, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
+      propertyPath: m_Name
+      value: Battery1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573940403621388067, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
+      propertyPath: m_Name
+      value: Key1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327872224154378111, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
+      propertyPath: m_Name
+      value: Key2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060062648549392480, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
+      propertyPath: m_Name
+      value: Magnet
       objectReference: {fileID: 0}
     - target: {fileID: 8179137937152547084, guid: 0291f3d638c9f4c95a70efd8c472eb2d, type: 3}
       propertyPath: m_LocalPosition.x
