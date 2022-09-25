@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5332534444204563587}
   - component: {fileID: 5332534444204563588}
-  - component: {fileID: 5332534444204563589}
+  - component: {fileID: 7210708045216273878}
   m_Layer: 0
   m_Name: Cabaninha
   m_TagString: Untagged
@@ -405,7 +405,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8, z: 1}
   m_Center: {x: -7.6, y: 1, z: -1.1}
---- !u!114 &5332534444204563589
+--- !u!114 &7210708045216273878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,13 +414,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152195156421554759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3bb52aefcd5c34ab4b21142e6dd533, type: 3}
+  m_Script: {fileID: 11500000, guid: 52fc4dabd0721dc478b4726e26b0dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _room: 0
   _objZCam: {fileID: 0}
   _col: {fileID: 0}
   _list_Item: []
+  _lock: 0
 --- !u!1 &1190419496059902723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,8 +1870,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3679481402224856794}
+  - component: {fileID: 2839011751610286559}
+  - component: {fileID: 6685283924864034553}
   m_Layer: 0
-  m_Name: Group27
+  m_Name: CatDoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,6 +1905,32 @@ Transform:
   m_Father: {fileID: 5332534444204563587}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2839011751610286559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410091968002010884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e369618d73fca7341b7ae8d0e2297805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6685283924864034553
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410091968002010884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 0.33
+  m_Direction: 1
+  m_Center: {x: -7.5, y: 0.4, z: -1.25}
 --- !u!1 &4487572385532703325
 GameObject:
   m_ObjectHideFlags: 0
