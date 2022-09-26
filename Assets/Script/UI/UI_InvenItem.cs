@@ -8,10 +8,15 @@ namespace RoomEscape
 {
     public class UI_InvenItem : MonoBehaviour
     {
+        //public static UI_InvenItem I;
         Text _txt_ItemName;
         Image _imgItem;
         Vector3 _vecImgOrigin;
-
+        
+        //void Awake()
+        //{
+        //    I = this;
+        //}
         private void Start()
         {
             //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
@@ -58,6 +63,10 @@ namespace RoomEscape
             _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
 
             _txt_ItemName.text = itemName;
+
+            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
+
+            _imgItem.sprite = UI_Inventory.I._testsp;
         }
 
     }

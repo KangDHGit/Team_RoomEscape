@@ -9,6 +9,7 @@ namespace RoomEscape
     {
         public static UI_Inventory I;
         public GameObject _itemTemplate;
+        public Sprite _testsp;
 
         void Awake()
         {
@@ -27,6 +28,7 @@ namespace RoomEscape
                 Add(itemName);
             }
 
+
             this.gameObject.SetActive(false);
         }
 
@@ -39,6 +41,19 @@ namespace RoomEscape
 
             UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
             ivenItem.Info(itemName);
+
+
+            Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
+            for (int i = 0; i < spList.Length; i++)
+            {
+                Sprite sp = spList[i];
+                if (sp.name == RoomItem.I._name)
+                {
+                    _testsp = sp;
+                    break;
+                }
+
+            }
         }
 
 

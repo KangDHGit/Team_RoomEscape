@@ -40,6 +40,7 @@ namespace RoomEscape
             OnOpenIven  (false);
             _ui_Hint_GiftBox.SetActive(false);
             _ui_Hint_Binoculars.SetActive(false);
+            //UI_InvenItem.I.Init();
         }
 
         private void Update()
