@@ -503,9 +503,7 @@ MonoBehaviour:
   _isbattery1: 0
   _isbattery2: 0
   _turn: 0
-  _in: 0
-  _out: 0
-  _wrongout: 0
+  _isMove: 0
 --- !u!65 &880102062
 BoxCollider:
   m_ObjectHideFlags: 0

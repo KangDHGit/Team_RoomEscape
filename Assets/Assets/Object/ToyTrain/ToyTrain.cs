@@ -18,9 +18,7 @@ namespace RoomEscape
         [SerializeField] bool _isbattery1 = false;
         [SerializeField] bool _isbattery2 = false;
         [SerializeField] bool _turn = false;
-        [SerializeField] bool _in = false;
-        [SerializeField] bool _out = false;
-        [SerializeField] bool _wrongout = false;
+        [SerializeField] bool _isMove = false;
 
         void Awake()
         {
@@ -56,28 +54,24 @@ namespace RoomEscape
             Debug.Log("이동");
             if (_isbattery1 == true && _isbattery2 == true)
             {
-                if (_wrongout == true || _out == true)
+                if (_isMove == true)
                 {
                     transform.position = _trainIn.transform.position;
-                    _wrongout = false;
-                    _out = false;
+                    _isMove = false;
                 }
-                if (_wrongout == false)
+                else
                 {
-
                     if (_turn == true)
                     {
                         transform.position = _trainOut.transform.position;
-                        _out = true;
+                        _isMove = true;
                         if (_ismagnet == true)
                             _key.SetActive(true);
-                        else
-                            _key.SetActive(false);
                     }
                     else
                     {
                         transform.position = _trainWrongOut.transform.position;
-                        _wrongout = true;
+                        _isMove = true;
                     }
                 }
             }
