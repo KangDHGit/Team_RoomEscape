@@ -19,6 +19,7 @@ namespace RoomEscape
             if (_solution[0] == _input[0] && _solution[1] == _input[1] && _solution[2] == _input[2] && _solution[3] == _input[3])
             {
                 Debug.Log("정답");
+                ToyTrain.I.TurnTrain();
             }
             else
             {
