@@ -6,11 +6,18 @@ namespace RoomEscape
 {
     public class Toy_Chest : ChildObj
     {
+        public static Toy_Chest I;
         public GameObject _objZCam_Open;
         [SerializeField] GameObject _obj_Lid;
         Vector3 _lid_OpenPos = new Vector3(-0.332f,-0.096f,0);
         Pink_Lock _pink_Lock;
-        
+        bool _isOpen = false;  public bool _IsOpen { get { return _isOpen; } }
+
+        public void Awake()
+        {
+            I = this;
+        }
+
         public override void Init()
         {
             base.Init();
@@ -22,6 +29,7 @@ namespace RoomEscape
                 Debug.LogError("_obj_Lid is Null");
             if (!transform.Find("Pink_Lock").TryGetComponent(out _pink_Lock))
                 Debug.LogError("_pink_Lock is Null");
+            
         }
         public void IsOpened()
         {
@@ -31,6 +39,7 @@ namespace RoomEscape
             _objZCam.SetActive(true);
             _obj_Lid.transform.position = _lid_OpenPos;
             _obj_Lid.transform.Rotate(new Vector3(0, 0, -30));
+            _isOpen = true;
         }
 
         protected override void OnClick(bool stat)

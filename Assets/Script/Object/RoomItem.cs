@@ -6,14 +6,9 @@ namespace RoomEscape
 {
     public class RoomItem : MonoBehaviour
     {
-        public static RoomItem I;
         public string _name = "";
         Collider _col;
 
-        void Awake()
-        {
-            I = this;
-        }
         public virtual void Init()
         {
 
@@ -23,7 +18,7 @@ namespace RoomEscape
         {
             //Debug.Log(_name);
         }
-        protected virtual void OnMouseDown()
+        protected virtual void OnMouseUp()
         {
             if (!CameraManager.I._isZoom)
                 return;
