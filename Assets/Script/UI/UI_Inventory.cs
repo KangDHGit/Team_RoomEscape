@@ -36,7 +36,7 @@ namespace RoomEscape
         {
 
             GameObject clone = Instantiate(_itemTemplate);
-            clone.transform.parent = _itemTemplate.transform;
+            clone.transform.parent = _itemTemplate.transform.parent;
             clone.SetActive(true);
 
             UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
