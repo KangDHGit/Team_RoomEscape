@@ -42,18 +42,6 @@ namespace RoomEscape
             UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
             ivenItem.Info(itemName);
 
-
-            Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
-            for (int i = 0; i < spList.Length; i++)
-            {
-                Sprite sp = spList[i];
-                if (sp.name == RoomItem.I._name)
-                {
-                    _testsp = sp;
-                    break;
-                }
-
-            }
         }
 
 

@@ -8,15 +8,11 @@ namespace RoomEscape
 {
     public class UI_InvenItem : MonoBehaviour
     {
-        //public static UI_InvenItem I;
         Text _txt_ItemName;
         Image _imgItem;
+        [SerializeField] Sprite _testsp;
+
         Vector3 _vecImgOrigin;
-        
-        //void Awake()
-        //{
-        //    I = this;
-        //}
         private void Start()
         {
             //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
@@ -64,9 +60,21 @@ namespace RoomEscape
 
             _txt_ItemName.text = itemName;
 
+            Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
+            for (int i = 0; i < spList.Length; i++)
+            {
+                Sprite sp = spList[i];
+                if (sp.name == itemName)
+                {
+                    _testsp = sp;
+                    break;
+                }
+
+            }
+
             _imgItem = transform.Find("Img_Item").GetComponent<Image>();
 
-            _imgItem.sprite = UI_Inventory.I._testsp;
+            _imgItem.sprite = _testsp;
         }
 
     }
