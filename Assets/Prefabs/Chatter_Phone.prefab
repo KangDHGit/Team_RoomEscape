@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 2332041458174133324}
   - component: {fileID: 1370419112787923817}
   - component: {fileID: 2018682414611045156}
-  - component: {fileID: 4236588745570172895}
+  - component: {fileID: 3196227806421467552}
   m_Layer: 0
   m_Name: Chatter_Phone
   m_TagString: Untagged
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: []
---- !u!114 &4236588745570172895
+--- !u!114 &3196227806421467552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3104884450711068406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9dea51f49091146961ce5935c7e4cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d2eada3270ea042bce1a85a8136d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _room: 0
@@ -1229,6 +1229,7 @@ MonoBehaviour:
   _col: {fileID: 0}
   _list_Item: []
   _lock: 0
+  _ui_Hint_ChatterPhone: {fileID: 0}
 --- !u!1 &3923615136488977071
 GameObject:
   m_ObjectHideFlags: 0

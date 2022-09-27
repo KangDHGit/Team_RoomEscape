@@ -17,6 +17,7 @@ namespace RoomEscape
         GameObject _iven_Btn_Close;
         GameObject _ui_Hint_GiftBox;
         GameObject _ui_Hint_Binoculars;
+        GameObject _ui_Hint_ChatterPhone;
 
         private GraphicRaycaster _gRayCaster; //UI Raycast
 
@@ -32,6 +33,7 @@ namespace RoomEscape
             _iven_Btn_Close = transform.Find("Iven_Btn_Closes").gameObject;
             _ui_Hint_GiftBox = transform.Find("UI_Hint_Paper(GiftBox)").gameObject;
             _ui_Hint_Binoculars = transform.Find("UI_Hint_Binoculars").gameObject;
+            _ui_Hint_ChatterPhone = transform.Find("UI_Hint_ChatterPhone").gameObject;
         }
 
         public void Init()
@@ -40,6 +42,7 @@ namespace RoomEscape
             OnOpenIven  (false);
             _ui_Hint_GiftBox.SetActive(false);
             _ui_Hint_Binoculars.SetActive(false);
+            _ui_Hint_ChatterPhone.SetActive(false);
             //UI_InvenItem.I.Init();
         }
 
