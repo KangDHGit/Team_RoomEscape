@@ -19,7 +19,7 @@ namespace RoomEscape
         {
             //Debug.Log(_name);
         }
-        protected override void OnMouseDown()
+        protected override void OnMouseUp()
         {
             if (!CameraManager.I._isZoom)
                 return;
