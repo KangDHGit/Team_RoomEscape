@@ -14,6 +14,9 @@ namespace RoomEscape
         [SerializeField] GameObject _magnet;
         [SerializeField] GameObject _key;
 
+        [SerializeField] Renderer _trainBulb;
+        [SerializeField] GameObject _trainLight;
+
         [SerializeField] bool _ismagnet = false;
         [SerializeField] bool _isbattery1 = false;
         [SerializeField] bool _isbattery2 = false;
@@ -32,12 +35,17 @@ namespace RoomEscape
             _trainWrongOut = RoomObjManager.I.transform.Find("Room_Spring/North/Train_WrongOut").gameObject;
             _magnet = transform.Find("Magnet").gameObject;
             _key = transform.Find("Key").gameObject;
-            
+
+            _trainBulb = transform.Find("TrainBulb").GetComponent<Renderer>();
+            _trainLight = transform.Find("TrainLight").gameObject;
+
             _magnet.SetActive(false);
             _key.SetActive(false);
 
             _ismagnet = false;
             _turn = false;
+
+            _trainLight.SetActive(false);
         }
 
         // Update is called once per frame
@@ -46,6 +54,11 @@ namespace RoomEscape
             if (_ismagnet == true)
             {
                 _magnet.SetActive(true);
+            }
+            if (_isbattery1 == true && _isbattery2 == true)
+            {
+                _trainBulb.sharedMaterial = DialLock.I._bulbColor[2];
+                _trainLight.SetActive(true);
             }
         }
 
