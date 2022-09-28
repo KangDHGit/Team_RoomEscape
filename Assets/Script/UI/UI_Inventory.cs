@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace RoomEscape
@@ -10,13 +11,14 @@ namespace RoomEscape
         public static UI_Inventory I;
         public GameObject _itemTemplate;
         public Sprite _testsp;
-
+        
         void Awake()
         {
             I = this;
 
             _itemTemplate = transform.Find("UI_InvenItem").gameObject;
             _itemTemplate.SetActive(false);
+
         }
         public void Init()
         {
@@ -44,6 +46,7 @@ namespace RoomEscape
 
         }
 
+        
 
     }
 }

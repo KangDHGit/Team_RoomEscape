@@ -8,11 +8,17 @@ namespace RoomEscape
 {
     public class UI_InvenItem : MonoBehaviour
     {
-        Text _txt_ItemName;
+        public static UI_InvenItem I;
+        public Text _txt_ItemName;
         Image _imgItem;
         [SerializeField] Sprite _testsp;
 
         Vector3 _vecImgOrigin;
+
+        void Awake()
+        {
+            I = this;
+        }
         private void Start()
         {
             //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
@@ -56,8 +62,7 @@ namespace RoomEscape
         //}
         public void Info(string itemName)
         {
-            _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
-
+            _txt_ItemName      = transform.Find("Txt_Name").GetComponent<Text>();
             _txt_ItemName.text = itemName;
 
             Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
@@ -72,9 +77,13 @@ namespace RoomEscape
 
             }
 
-            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
-
+            _imgItem        = transform.Find("Img_Item").GetComponent<Image>();
             _imgItem.sprite = _testsp;
+        }
+
+        public void GetItemData()
+        {
+            Debug.Log("아이템데이터 : " + _txt_ItemName.text);
         }
 
     }
