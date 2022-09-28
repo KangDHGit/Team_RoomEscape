@@ -19,7 +19,7 @@ namespace RoomEscape
         {
             if(true)
             {
-                transform.position = _openPos;
+                transform.localPosition = _openPos;
                 transform.Rotate(0, -45, 0);
                 // 화면 어두워짐, 문열리는 사운드 재생
                 StartCoroutine(BGActive());
