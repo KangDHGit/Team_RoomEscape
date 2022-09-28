@@ -25,14 +25,14 @@ namespace RoomEscape
         {
             I = this;
 
-            _gRayCaster     = GetComponent<GraphicRaycaster>();
-            _obj_Btn_Left   = transform.Find("Btn_Left").gameObject;
-            _obj_Btn_Right  = transform.Find("Btn_Right").gameObject;
-            _obj_Btn_Down   = transform.Find("Btn_Down").gameObject;
-            _iven_Btn_Open  = transform.Find("Iven_Btn_Open").gameObject;
-            _iven_Btn_Close = transform.Find("Iven_Btn_Closes").gameObject;
-            _ui_Hint_GiftBox = transform.Find("UI_Hint_Paper(GiftBox)").gameObject;
-            _ui_Hint_Binoculars = transform.Find("UI_Hint_Binoculars").gameObject;
+            _gRayCaster           = GetComponent<GraphicRaycaster>();
+            _obj_Btn_Left         = transform.Find("Btn_Left").gameObject;
+            _obj_Btn_Right        = transform.Find("Btn_Right").gameObject;
+            _obj_Btn_Down         = transform.Find("Btn_Down").gameObject;
+            _iven_Btn_Open        = transform.Find("Iven_Btn_Open").gameObject;
+            _iven_Btn_Close       = transform.Find("Iven_Btn_Closes").gameObject;
+            _ui_Hint_GiftBox      = transform.Find("UI_Hint_Paper(GiftBox)").gameObject;
+            _ui_Hint_Binoculars   = transform.Find("UI_Hint_Binoculars").gameObject;
             _ui_Hint_ChatterPhone = transform.Find("UI_Hint_ChatterPhone").gameObject;
         }
 
@@ -40,10 +40,9 @@ namespace RoomEscape
         {
             OnChangeView(true);
             OnOpenIven  (false);
-            _ui_Hint_GiftBox.SetActive(false);
-            _ui_Hint_Binoculars.SetActive(false);
+            _ui_Hint_GiftBox.     SetActive(false);
+            _ui_Hint_Binoculars.  SetActive(false);
             _ui_Hint_ChatterPhone.SetActive(false);
-            //UI_InvenItem.I.Init();
         }
 
         private void Update()

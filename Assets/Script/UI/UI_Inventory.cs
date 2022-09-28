@@ -9,8 +9,9 @@ namespace RoomEscape
     public class UI_Inventory : MonoBehaviour
     {
         public static UI_Inventory I;
+
         public GameObject _itemTemplate;
-        public Sprite _testsp;
+        public Sprite     _testsp;
         
         void Awake()
         {

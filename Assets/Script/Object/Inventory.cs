@@ -8,12 +8,12 @@ namespace RoomEscape
     public class ItemInfo
     {
         [SerializeField] string _names;
-        [SerializeField] int _count;
+        [SerializeField] int    _count;
     }
     public class Inventory : MonoBehaviour
     {
         public static Inventory I;
-        public List<string> _itemList;
+        public List<string>     _itemList;
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace RoomEscape
         {
             if (_itemList.Contains(itemName) == false)
             {
-                _itemList.Add(itemName);
+                _itemList.     Add(itemName);
                 UI_Inventory.I.Add(itemName);
             }
             

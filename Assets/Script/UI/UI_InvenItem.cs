@@ -9,9 +9,10 @@ namespace RoomEscape
     public class UI_InvenItem : MonoBehaviour
     {
         public static UI_InvenItem I;
+
         public Text _txt_ItemName;
-        Image _imgItem;
-        [SerializeField] Sprite _testsp;
+        Image       _imgItem;
+        Sprite      _testsp;
 
         Vector3 _vecImgOrigin;
 
@@ -76,11 +77,9 @@ namespace RoomEscape
                 }
 
             }
-
             _imgItem        = transform.Find("Img_Item").GetComponent<Image>();
             _imgItem.sprite = _testsp;
         }
-
         public void GetItemData()
         {
             Debug.Log("아이템데이터 : " + _txt_ItemName.text);

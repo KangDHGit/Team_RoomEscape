@@ -14,14 +14,14 @@ namespace RoomEscape
         [SerializeField] GameObject _magnet;
         [SerializeField] GameObject _key;
 
-        [SerializeField] Renderer _trainBulb;
+        [SerializeField] Renderer   _trainBulb;
         [SerializeField] GameObject _trainLight;
 
-        [SerializeField] bool _ismagnet = false;
+        [SerializeField] bool _ismagnet =   false;
         [SerializeField] bool _isbattery1 = false;
         [SerializeField] bool _isbattery2 = false;
-        [SerializeField] bool _turn = false;
-        [SerializeField] bool _isMove = false;
+        [SerializeField] bool _turn =       false;
+        [SerializeField] bool _isMove =     false;
 
         void Awake()
         {
@@ -30,20 +30,20 @@ namespace RoomEscape
             
         void Start()
         {
-            _trainIn = RoomObjManager.I.transform.Find("Room_Spring/North/Train_In").gameObject;
-            _trainOut = RoomObjManager.I.transform.Find("Room_Spring/North/Train_Out").gameObject;
+            _trainIn =       RoomObjManager.I.transform.Find("Room_Spring/North/Train_In").gameObject;
+            _trainOut =      RoomObjManager.I.transform.Find("Room_Spring/North/Train_Out").gameObject;
             _trainWrongOut = RoomObjManager.I.transform.Find("Room_Spring/North/Train_WrongOut").gameObject;
-            _magnet = transform.Find("Magnet").gameObject;
-            _key = transform.Find("Key").gameObject;
-
-            _trainBulb = transform.Find("TrainBulb").GetComponent<Renderer>();
+            
+            _magnet =     transform.Find("Magnet").gameObject;
+            _key =        transform.Find("Key").gameObject;
+            _trainBulb =  transform.Find("TrainBulb").GetComponent<Renderer>();
             _trainLight = transform.Find("TrainLight").gameObject;
 
             _magnet.SetActive(false);
-            _key.SetActive(false);
+            _key.   SetActive(false);
 
             _ismagnet = false;
-            _turn = false;
+            _turn =     false;
 
             _trainLight.SetActive(false);
         }
