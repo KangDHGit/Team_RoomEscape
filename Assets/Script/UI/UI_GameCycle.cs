@@ -35,11 +35,11 @@ namespace RoomEscape
 
         public void ConfirmRestart()
         {
-            _ui_ConfirmRestart.SetActive(false);
+            _ui_ConfirmRestart.SetActive(true);
         }
         public void ReturnGame()
         {
-            _ui_GameStart.SetActive(false);
+            _ui_ConfirmRestart.SetActive(false);
         }
     }
 }
