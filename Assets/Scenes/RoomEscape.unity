@@ -718,6 +718,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4937435885367770265, guid: a61625d6c924f2e4b9d80d04d1ac1d36, type: 3}
   m_PrefabInstance: {fileID: 6209300706710137263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &616198814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 500468600283022487, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+  m_PrefabInstance: {fileID: 83350255692047712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ecff81c49996094ebc0be56226ad331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &650815223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,9 +2837,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1650273296}
+    - target: {fileID: 389714243715910319, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_Text
+      value: "Team3 \uAE43 \uC62C\uB9B4\uAC8C\uC694 - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D
+        \uAC15\uB300\uD55C \uBC15\uD558\uB839"
+      objectReference: {fileID: 0}
     - target: {fileID: 2283468037597860459, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025756211109326261, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025756211109326261, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmationWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160648606394796607, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4305304351327356404, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2846,9 +2874,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4606957867784275610, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_Text
+      value: "\uD30C\uC2A4\uD154\uD1A4\uC758 \uBCBD\uC9C0 \uC544\uAE30\uC790\uAE30\uD55C
+        \uAC00\uAD6C\uB4E4\uACFC \uC7A5\uB09C\uAC10 \uC5B4\uB514\uC11C \uB9CE\uC774\n\uBCF8
+        \uD48D\uACBD\uC5D0 \uC704\uD654\uAC10\uC774 \uB4E0\uB2E4\r.\n\uC5EC\uAE34...
+        \uC5B4\uB9B4\uC801 \uC0B4\uB358 \uC9D1\uC758 \uB0B4 \uBC29\uACFC \uB611\uAC19\uC544...\r\n\uB300\uCCB4
+        \uC5B4\uB5BB\uAC8C? \uC774\uACF3\uC5D0 \uC624\uAE30\uC804 \uAE30\uC5B5\uC774
+        \uB098\uC9C0 \uC54A\uC544\r\n...\uC77C\uB2E8 \uC774 \uBC29\uC5D0\uC11C \uB098\uAC00\uC57C\uACA0\uC5B4......Enter"
+      objectReference: {fileID: 0}
     - target: {fileID: 5727592622867806698, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836559590021971062, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836559590021971062, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 616198814}
+    - target: {fileID: 5836559590021971062, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmationWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836559590021971062, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668179884694163872, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704297593818502116, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
