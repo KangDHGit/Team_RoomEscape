@@ -33,13 +33,9 @@ namespace RoomEscape
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        public void ConfirmRestart()
+        public void ConfirmationWindow(bool con)
         {
-            _ui_ConfirmRestart.SetActive(true);
-        }
-        public void ReturnGame()
-        {
-            _ui_ConfirmRestart.SetActive(false);
+            _ui_ConfirmRestart.SetActive(con);
         }
     }
 }
