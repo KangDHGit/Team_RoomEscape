@@ -10,6 +10,7 @@ namespace RoomEscape
         Vector3 _openPos = new Vector3(0.68f,0,-0.65f);
         Image _img_Bg;
         GameObject _ui_GameEnd;
+        AudioSource _as_DoorOpen;
         bool _isOpened = false;
 
         private void Start()
@@ -21,6 +22,8 @@ namespace RoomEscape
                 _ui_GameEnd.SetActive(false);
             else
                 Debug.LogError("_ui_GameEnd");
+            if (!TryGetComponent(out _as_DoorOpen))
+                Debug.LogError("_ui_GameEnd is Null");
         }
         private void OnMouseUp()
         {
@@ -29,6 +32,7 @@ namespace RoomEscape
                 transform.localPosition = _openPos;
                 transform.Rotate(0, 45, 0);
                 // 화면 어두워짐, 문열리는 사운드 재생
+                _as_DoorOpen.Play();
                 StartCoroutine(BGActive());
                 // 아웃트로 재생
 
