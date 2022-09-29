@@ -37,6 +37,10 @@ namespace RoomEscape
         {
             _ui_ConfirmRestart.SetActive(con);
         }
+        public void Intro()
+        {
+            
+        }
     }
 }
     
