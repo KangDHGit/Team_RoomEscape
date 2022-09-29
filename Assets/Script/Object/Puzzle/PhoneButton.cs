@@ -12,6 +12,7 @@ namespace RoomEscape
 
 
         // 버튼 누르기 효과
+        AudioSource _AS_PushPhone;
         Vector3 _originPos;
         Vector3 _pushPos;
         Coroutine _coroutine;
@@ -38,6 +39,10 @@ namespace RoomEscape
             */
             IEnumerator PhonePush()
             {
+                if (_AS_PushPhone == null)
+                    _AS_PushPhone = GetComponent<AudioSource>();
+                _AS_PushPhone.Play();
+
                 _pushPos = new Vector3(transform.localPosition.x, 0.0585f, transform.localPosition.z);
                 _isCoroutineing = true;
                 _originPos = transform.localPosition;
