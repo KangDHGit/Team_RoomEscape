@@ -9,12 +9,15 @@ namespace RoomEscape
         bool _isOpen;
         Vector3 _closePos;
         public Vector3 _openPos;
+        public AudioSource _as_Opening;
 
         public override void Init()
         {
             SetCol(false);
             _isOpen = false;
             _closePos = transform.localPosition;
+            if (!TryGetComponent(out _as_Opening))
+                Debug.LogError("_as_Opening Error");
         }
 
         protected override void OnMouseUp()
@@ -49,6 +52,7 @@ namespace RoomEscape
                 ListSetCol(_list_Item, true);
                 _isOpen = true;
             }
+            _as_Opening.Play();
         }
     }
 }
