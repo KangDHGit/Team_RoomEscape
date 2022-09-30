@@ -92,7 +92,15 @@ namespace RoomEscape
 
         protected void MountingItem()
         {
-            
+            //if (UI_Inventory.I._selItem == null)
+            //{
+            //    return;
+            //}
+            //else if (UI_Inventory.I._selItem._txt_ItemName.text == _itemName && _toy_Chest._objZCam.activeSelf)
+            //{
+            //    _toy_Chest.IsOpened();
+            //    gameObject.SetActive(false);
+            //}
         }
 
         public void TurnTrain()
@@ -100,5 +108,7 @@ namespace RoomEscape
             transform.rotation = Quaternion.Euler(0, 90, 0);
             _turn = true;
         }
+
+
     }
 }
