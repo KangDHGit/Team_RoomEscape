@@ -4,18 +4,11 @@ using UnityEngine;
 
 namespace RoomEscape
 {
-    public enum Type
-    {
-        PINK_KEY,
-        GRAY_KEY,
-        BATTERY,
-        MAGNET
-    }
+
 
     public class RoomItem : MonoBehaviour
     {
         public static RoomItem I;
-        public Type _itemtype;
         public string _name = "";
         Collider _col;
 
