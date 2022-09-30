@@ -2622,7 +2622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8607300152464907994
 Transform:
   m_ObjectHideFlags: 0
@@ -2667,7 +2667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\uAC74\uC804\uC9C0"
-  _itemttype: 0
 --- !u!1 &9064276047872453665
 GameObject:
   m_ObjectHideFlags: 0
