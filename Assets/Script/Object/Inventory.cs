@@ -22,11 +22,12 @@ namespace RoomEscape
 
         public void AddItem(string itemName)
         {
-            if (_itemList.Contains(itemName) == false)
+            //if (_itemList.Contains(itemName) == false)
             {
                 _itemList.     Add(itemName);
                 UI_Inventory.I.Add(itemName);
             }
+
             //Debug.Log("Inventory Add Success");
         }
     }
