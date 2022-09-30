@@ -8,8 +8,8 @@ namespace RoomEscape
     {
         [SerializeField] Toy_Chest _toy_Chest;
         Collider _col;
+        string _keyName = "분홍열쇠";
 
-        [SerializeField] string _itemName;
         private void Start()
         {
             if (!transform.parent.TryGetComponent(out _toy_Chest))
@@ -26,10 +26,11 @@ namespace RoomEscape
             {
                 return;
             }
-            else if (UI_Inventory.I._selItem._txt_ItemName.text == _itemName && _toy_Chest._objZCam.activeSelf)
+            else if (UI_Inventory.I._selItem._txt_ItemName.text == _keyName && _toy_Chest._objZCam.activeSelf)
             {
                 _toy_Chest.IsOpened();
                 gameObject.SetActive(false);
+                UI_Inventory.I.DeleteItem();
             }
         }
         public void SetCol(bool stat)

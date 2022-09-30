@@ -22,7 +22,7 @@ namespace RoomEscape
             _imgItemsel.SetActive(false);
         }
 
-        public void Info(string itemName,int count = 1)
+        public void Info(string itemName)
         {
 
             Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
@@ -42,7 +42,7 @@ namespace RoomEscape
 
             _imgItem = transform.Find("Img_Item").GetComponent<Image>();
             _imgItem.sprite = _testsp;
-            
+
             //_itemcount = count;
             //_txt_Count.text = _itemcount.ToString();
 

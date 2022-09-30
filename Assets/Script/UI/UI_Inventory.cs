@@ -45,7 +45,7 @@ namespace RoomEscape
             UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
             ivenItem.Info(itemName);
 
-            
+
         }
 
         public void SelectItem(UI_InvenItem item)
@@ -54,30 +54,38 @@ namespace RoomEscape
             {
                 _selItem._imgItemsel.SetActive(false);
             }
-  
+
             _selItem = item;
             _selItem._imgItemsel.SetActive(true);
             Debug.Log("나는 누구인가 ? : " + _selItem._txt_ItemName.text);
-            
-            
+
         }
 
         public void CloseSel()
         {
-            if(_selItem == null)
+            if (_selItem == null)
             {
                 return;
             }
             _selItem._imgItemsel.SetActive(false);
             _selItem = null;
-            
+
         }
 
-        public void DeleteItrem()
+        public void DeleteItem()
         {
-            _selItem = null;
+
+            for (int i = 0; i < Inventory.I._itemList.Count; i++)
+            {
+                if (Inventory.I._itemList[i] == _selItem._txt_ItemName.text)
+                {
+                    Inventory.I._itemList.RemoveAt(i);
+                    break;
+                }
+            }
 
             Destroy(_selItem.gameObject);
+
         }
 
     }
