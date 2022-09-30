@@ -12,6 +12,7 @@ namespace RoomEscape
         GameObject _ui_GameEnd;
         AudioSource _as_DoorOpen;
         bool _isOpened = false;
+        string _itemName = "회색열쇠";
 
         private void Start()
         {
@@ -27,16 +28,19 @@ namespace RoomEscape
         }
         private void OnMouseUp()
         {
-            if(true && !_isOpened)
+            if (UI_Inventory.I._selItem != null)
             {
-                transform.localPosition = _openPos;
-                transform.Rotate(0, 45, 0);
-                // 화면 어두워짐, 문열리는 사운드 재생
-                _as_DoorOpen.Play();
-                StartCoroutine(BGActive());
-                // 아웃트로 재생
+                if (UI_Inventory.I._selItem._txt_ItemName.text == _itemName && !_isOpened)
+                {
+                    transform.localPosition = _openPos;
+                    transform.Rotate(0, 45, 0);
+                    // 화면 어두워짐, 문열리는 사운드 재생
+                    _as_DoorOpen.Play();
+                    StartCoroutine(BGActive());
+                    // 아웃트로 재생
 
-                _isOpened = true;
+                    _isOpened = true;
+                }
             }
         }
         IEnumerator BGActive()
