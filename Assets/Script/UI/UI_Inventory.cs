@@ -50,16 +50,29 @@ namespace RoomEscape
 
         public void SelectItem(UI_InvenItem item)
         {
-
             if (_selItem != null)
             {
                 _selItem._imgItemsel.SetActive(false);
             }
+  
             _selItem = item;
             _selItem._imgItemsel.SetActive(true);
             Debug.Log("나는 누구인가 ? : " + _selItem._txt_ItemName.text);
-
+            
+            
         }
+
+        public void CloseSel()
+        {
+            if(_selItem == null)
+            {
+                return;
+            }
+            _selItem._imgItemsel.SetActive(false);
+            _selItem = null;
+            
+        }
+
         public void DeleteItrem()
         {
             _selItem = null;
