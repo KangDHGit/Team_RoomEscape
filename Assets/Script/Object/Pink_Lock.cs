@@ -19,11 +19,13 @@ namespace RoomEscape
         }
         private void OnMouseUp()
         {
-            if(true && _toy_Chest._objZCam.activeSelf)
+            if (true && _toy_Chest._objZCam.activeSelf)
             {
                 _toy_Chest.IsOpened();
                 gameObject.SetActive(false);
             }
+
+
         }
 
         public void SetCol(bool stat)

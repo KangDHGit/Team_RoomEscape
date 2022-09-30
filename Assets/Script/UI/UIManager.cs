@@ -43,6 +43,7 @@ namespace RoomEscape
             _ui_Hint_GiftBox.     SetActive(false);
             _ui_Hint_Binoculars.  SetActive(false);
             _ui_Hint_ChatterPhone.SetActive(false);
+            UI_Inventory.I.Init();
         }
 
         private void Update()

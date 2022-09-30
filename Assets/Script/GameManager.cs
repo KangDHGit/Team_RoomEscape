@@ -18,7 +18,6 @@ namespace RoomEscape
             CameraManager.  I.Init();
             DialLock.       I.Init();
             UIManager.      I.Init();
-            UI_Inventory.   I.Init();
             Hint_Pink_Drawers.I.Init();
         }
     }

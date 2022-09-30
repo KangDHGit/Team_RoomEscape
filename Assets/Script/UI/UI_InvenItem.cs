@@ -8,63 +8,22 @@ namespace RoomEscape
 {
     public class UI_InvenItem : MonoBehaviour
     {
-        public static UI_InvenItem I;
-
         public Text _txt_ItemName;
-        Image       _imgItem;
-        Sprite      _testsp;
-
+        public Text _txt_Count;
+        int _itemcount;
+        public GameObject _imgItemsel;
+        Image _imgItem;
+        Sprite _testsp;
         Vector3 _vecImgOrigin;
 
-        void Awake()
-        {
-            I = this;
-        }
         private void Start()
         {
-            //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
-            //_imgItem = transform.Find("Img_Item").GetComponent<Image>();
-            //_vecImgOrigin = _imgItem.transform.localPosition;
+            _imgItemsel = transform.Find("Img_sel").gameObject;
+            _imgItemsel.SetActive(false);
         }
 
-        public void Init()
+        public void Info(string itemName,int count = 1)
         {
-            //_txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
-            //_imgItem = transform.Find("Img_Item").GetComponent<Image>();
-            //_vecImgOrigin = _imgItem.transform.localPosition;
-        }
-        //public void DragItem()
-        //{
-        //    _imgItem.rectTransform.position = Input.mousePosition;
-        //}
-        //public void EndDrag()
-        //{
-        //    // 레이 = 마우스 클릭위치
-        //    Ray ray = CameraManager.I._objMCam_Now.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-
-        //    // ray위치에 레이캐스트를 해서 걸리면 hitInfo에 정보를 넣음
-        //    if (Physics.Raycast(ray, out RaycastHit hitInfo))
-        //    {
-        //        Debug.Log(hitInfo.transform.gameObject.name);
-        //        if (hitInfo.transform.TryGetComponent<Door>(out Door hitDoor))
-        //        {
-        //            if (hitDoor.CheckItem(_txt_ItemName.text))
-        //            {
-        //                _imgItem.rectTransform.localPosition = _vecImgOrigin;
-        //                this.gameObject.SetActive(false);
-        //            }
-        //        }
-        //        _imgItem.rectTransform.localPosition = _vecImgOrigin;
-        //    }
-        //    else
-        //    {
-        //        _imgItem.rectTransform.localPosition = _vecImgOrigin;
-        //    }
-        //}
-        public void Info(string itemName)
-        {
-            _txt_ItemName      = transform.Find("Txt_Name").GetComponent<Text>();
-            _txt_ItemName.text = itemName;
 
             Sprite[] spList = Resources.LoadAll<Sprite>("Item_Img");
             for (int i = 0; i < spList.Length; i++)
@@ -77,13 +36,21 @@ namespace RoomEscape
                 }
 
             }
-            _imgItem        = transform.Find("Img_Item").GetComponent<Image>();
-            _imgItem.sprite = _testsp;
-        }
-        public void GetItemData()
-        {
-            Debug.Log("아이템데이터 : " + _txt_ItemName.text);
-        }
 
+            _txt_ItemName = transform.Find("Txt_Name").GetComponent<Text>();
+            _txt_ItemName.text = itemName;
+
+            _imgItem = transform.Find("Img_Item").GetComponent<Image>();
+            _imgItem.sprite = _testsp;
+            
+            _itemcount = count;
+            _txt_Count.text = _itemcount.ToString();
+
+        }
+        public void ItemCount(int count)
+        {
+            _itemcount += count;
+            _txt_Count.text = _itemcount.ToString();
+        }
     }
 }

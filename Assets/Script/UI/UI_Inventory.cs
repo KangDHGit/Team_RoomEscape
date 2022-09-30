@@ -10,9 +10,10 @@ namespace RoomEscape
     {
         public static UI_Inventory I;
 
+        public UI_InvenItem _selItem;
+
         public GameObject _itemTemplate;
-        public Sprite     _testsp;
-        
+
         void Awake()
         {
             I = this;
@@ -31,7 +32,6 @@ namespace RoomEscape
                 Add(itemName);
             }
 
-
             this.gameObject.SetActive(false);
         }
 
@@ -45,9 +45,27 @@ namespace RoomEscape
             UI_InvenItem ivenItem = clone.GetComponent<UI_InvenItem>();
             ivenItem.Info(itemName);
 
+            
         }
 
-        
+        public void SelectItem(UI_InvenItem item)
+        {
+
+            if (_selItem != null)
+            {
+                _selItem._imgItemsel.SetActive(false);
+            }
+            _selItem = item;
+            _selItem._imgItemsel.SetActive(true);
+            Debug.Log("나는 누구인가 ? : " + _selItem._txt_ItemName.text);
+
+        }
+        public void DeleteItrem()
+        {
+            _selItem = null;
+
+            Destroy(_selItem.gameObject);
+        }
 
     }
 }

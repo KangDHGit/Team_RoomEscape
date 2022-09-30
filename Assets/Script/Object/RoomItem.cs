@@ -4,18 +4,26 @@ using UnityEngine;
 
 namespace RoomEscape
 {
-    public enum ItemType
+    public enum Type
     {
         PINK_KEY,
         GRAY_KEY,
         BATTERY,
         MAGNET
     }
+
     public class RoomItem : MonoBehaviour
     {
+        public static RoomItem I;
+        public Type _itemtype;
         public string _name = "";
-        public ItemType _itemttype;
         Collider _col;
+
+        //public bool _itemCheck() { return _name()};
+        void Awake()
+        {
+            I = this;
+        }
 
         public virtual void Init()
         {
@@ -32,12 +40,11 @@ namespace RoomEscape
                 return;
             //Debug.Log(_name + " Get!!!!");
             if (UIManager.I.CheckClickUI() == false)
-            {
-                Inventory.I.AddItem(_name);
-
+            {                
+                    Inventory.I.AddItem(_name);
+                
                 gameObject.SetActive(false);
             }
-
         }
 
         public void SetCol(bool stat)
