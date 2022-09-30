@@ -43,8 +43,8 @@ namespace RoomEscape
             _imgItem = transform.Find("Img_Item").GetComponent<Image>();
             _imgItem.sprite = _testsp;
             
-            _itemcount = count;
-            _txt_Count.text = _itemcount.ToString();
+           // _itemcount = count;
+            //_txt_Count.text = _itemcount.ToString();
 
         }
         public void ItemCount(int count)
