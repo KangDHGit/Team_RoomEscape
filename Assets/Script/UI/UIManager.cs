@@ -10,9 +10,9 @@ namespace RoomEscape
     {
         public static UIManager I;
 
-        [SerializeField] GameObject _obj_Btn_Left;
-        [SerializeField] GameObject _obj_Btn_Right;
-        [SerializeField] GameObject _obj_Btn_Down;
+        GameObject _obj_Btn_Left;
+        GameObject _obj_Btn_Right;
+        GameObject _obj_Btn_Down;
         GameObject _iven_Btn_Open;
         GameObject _iven_Btn_Close;
         GameObject _ui_Hint_GiftBox;
