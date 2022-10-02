@@ -38,9 +38,13 @@ namespace RoomEscape
                     _as_DoorOpen.Play();
                     StartCoroutine(BGActive());
                     // 아웃트로 재생
-
+                    UI_Inventory.I.DeleteItem();
                     _isOpened = true;
                 }
+            }
+            else
+            {
+                transform.parent.GetComponent<AudioSource>().Play();
             }
         }
         IEnumerator BGActive()
