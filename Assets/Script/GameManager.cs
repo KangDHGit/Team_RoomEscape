@@ -16,6 +16,7 @@ namespace RoomEscape
         {
             RoomObjManager. I.Init();
             CameraManager.  I.Init();
+            SoundManager.   I.Init();
             DialLock.       I.Init();
             UIManager.      I.Init();
             Hint_Pink_Drawers.I.Init();

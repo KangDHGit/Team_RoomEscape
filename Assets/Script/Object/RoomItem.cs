@@ -35,7 +35,7 @@ namespace RoomEscape
             if (UIManager.I.CheckClickUI() == false)
             {                
                     Inventory.I.AddItem(_name);
-                
+                SoundManager.I._as_PickUP.Play();
                 gameObject.SetActive(false);
             }
         }
