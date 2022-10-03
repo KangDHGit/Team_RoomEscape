@@ -14,8 +14,11 @@ namespace RoomEscape
         GameObject _ui_Restart;
         GameObject _ui_Intro;
         GameObject _ui_Black;
+
         Text _introTxt;
         string _intro;
+
+        GameObject _introEnter;
 
         bool _isIntroEnd;
 
@@ -39,6 +42,9 @@ namespace RoomEscape
             _introTxt = transform.Find("UI_Intro/IntroTxt").GetComponent<Text>();
             _intro = _introTxt.text;
             _introTxt.text = "";
+
+            _introEnter = transform.Find("UI_Intro/Enter").gameObject;
+            _introEnter.SetActive(false);
         }
 
         private void Update()
@@ -87,6 +93,27 @@ namespace RoomEscape
             }
 
             _isIntroEnd = true;
+            StartCoroutine(IntroEnter());
+        }
+
+        IEnumerator IntroEnter()
+        {
+
+            while (true)
+            {
+                if (_isIntroEnd == false)
+                {
+                    yield break;
+                }
+      
+                _introEnter.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+
+                _introEnter.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+
+            }
+
         }
 
     }
