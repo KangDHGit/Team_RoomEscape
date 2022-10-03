@@ -8,25 +8,24 @@ namespace RoomEscape
     {
         public static ToyTrain I;
 
-        [SerializeField] GameObject _trainIn;
-        [SerializeField] GameObject _trainOut;
-        [SerializeField] GameObject _trainWrongOut;
-        [SerializeField] GameObject _magnet;
-        [SerializeField] GameObject _key;
+        GameObject _trainIn;
+        GameObject _trainOut;
+        GameObject _trainWrongOut;
+        GameObject _magnet;
+        GameObject _key;
 
-        [SerializeField] Renderer   _trainBulb;
-        [SerializeField] GameObject _trainLight;
+        Renderer   _trainBulb;
+        GameObject _trainLight;
 
-        [SerializeField] bool _ismagnet =   false;
-        [SerializeField] bool _isbattery1 = false;
-        [SerializeField] bool _isbattery2 = false;
         [SerializeField] bool _turn =       false;
         [SerializeField] bool _isMove =     false;
 
-
         [SerializeField] bool[] _isitem;
         [SerializeField] string[] _itemName;
-        
+
+
+        AudioSource _trainHorn;
+
         void Awake()
         {
             I = this;
@@ -46,7 +45,6 @@ namespace RoomEscape
             _magnet.SetActive(false);
             _key.SetActive(false);
 
-            _ismagnet = false;
             _turn = false;
 
             _trainLight.SetActive(false);
@@ -54,13 +52,15 @@ namespace RoomEscape
             
 
             _isitem = new bool[3];
+
+            _trainHorn = GetComponent<AudioSource>();
         }
 
         void OnMouseUp()
         {
             Debug.Log("이동");
             if (_isitem[1] == true && _isitem[2] == true)
-            {
+            {  
                 if (_isMove == true)
                 {
                     transform.position = _trainIn.transform.position;
@@ -68,11 +68,12 @@ namespace RoomEscape
                 }
                 else
                 {
+                    _trainHorn.Play();
                     if (_turn == true)
                     {
                         transform.position = _trainOut.transform.position;
                         _isMove = true;
-                        if (_ismagnet == true)
+                        if (_isitem[0] == true)
                             _key.SetActive(true);
                     }
                     else
