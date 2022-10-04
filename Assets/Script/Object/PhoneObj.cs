@@ -21,6 +21,7 @@ namespace RoomEscape
         protected override void OnClick(bool stat)
         {
             base.OnClick(stat);
+            _chatter_Phone._input.Clear();
             if(_chatter_Phone._IsCall)
                 _ui_Hint_ChatterPhone.SetActive(stat);
         }
