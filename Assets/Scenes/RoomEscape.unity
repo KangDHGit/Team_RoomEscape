@@ -3061,6 +3061,14 @@ PrefabInstance:
       value: "Team3 \uAE43 \uC62C\uB9B4\uAC8C\uC694 - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D
         \uAC15\uB300\uD55C \uBC15\uD558\uB839"
       objectReference: {fileID: 0}
+    - target: {fileID: 841539513319484102, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905666463372717639, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1034617439245770655, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3103,7 +3111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160648606394796607, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4305304351327356404, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3150,11 +3158,19 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7668179884694163872, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+    - target: {fileID: 6042287934262694767, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7668179884694163872, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7704297593818502116, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421836760670086744, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
