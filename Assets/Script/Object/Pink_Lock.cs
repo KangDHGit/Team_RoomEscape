@@ -28,8 +28,8 @@ namespace RoomEscape
             }
             else if (UI_Inventory.I._selItem._txt_ItemName.text == _keyName && _toy_Chest._objZCam.activeSelf)
             {
-                _toy_Chest.IsOpened();
-                gameObject.SetActive(false);
+                _toy_Chest.    IsOpened();
+                gameObject.    SetActive(false);
                 UI_Inventory.I.DeleteItem();
             }
         }

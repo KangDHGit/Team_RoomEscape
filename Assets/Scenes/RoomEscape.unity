@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4790761, g: 0.47572142, b: 0.39054048, a: 1}
+  m_IndirectSpecularColor: {r: 0.47907633, g: 0.4757216, b: 0.3905406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -639,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &531565413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3156,7 +3156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7704297593818502116, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
@@ -88776,7 +88776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6299972757115503981, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.17
+      value: -0.108
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
