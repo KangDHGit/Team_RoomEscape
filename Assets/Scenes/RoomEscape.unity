@@ -1841,19 +1841,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6783132272232847493, guid: 9cbdeded8e229e744879d0e246d2be7b, type: 3}
   m_PrefabInstance: {fileID: 7419318243067726323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1663707443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663707439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b361c6d2abd0fe3428359b020fc570b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: "\uBD84\uD64D\uC5F4\uC1E0"
 --- !u!65 &1663707444
 BoxCollider:
   m_ObjectHideFlags: 0
