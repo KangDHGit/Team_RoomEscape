@@ -58,6 +58,9 @@ namespace RoomEscape
 
         void OnMouseUp()
         {
+            MountingItem();
+
+
             Debug.Log("이동");
             if (_isitem[1] == true && _isitem[2] == true)
             {  
@@ -84,7 +87,7 @@ namespace RoomEscape
                 }
             }
 
-            MountingItem();
+            
 
 
 
@@ -99,6 +102,7 @@ namespace RoomEscape
 
             else
             {
+                _isMove = true;
                 for (int i = 0; i < _itemName.Length-1; i++)
                 {
                     if (UI_Inventory.I._selItem._txt_ItemName.text == _itemName[i])
@@ -111,6 +115,7 @@ namespace RoomEscape
                         _isitem[i] = true;
                     }
                 }
+                UI_Inventory.I.DeleteItem();
             }
 
 
