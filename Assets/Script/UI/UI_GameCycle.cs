@@ -23,6 +23,8 @@ namespace RoomEscape
         bool _isIntroEnd;
         bool _isSkip;
 
+        public AudioSource _keyboardSound;
+
         private void Start()
         {
             _ui_GameStart = transform.Find("UI_GameStart").gameObject;
@@ -46,6 +48,8 @@ namespace RoomEscape
 
             _introEnter = transform.Find("UI_Intro/Enter").gameObject;
             _introEnter.SetActive(false);
+
+            _keyboardSound = transform.Find("UI_Intro/IntroTxt").GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -87,24 +91,26 @@ namespace RoomEscape
         IEnumerator PlayIntro()
         {
             IntroSet(true);
-
+            _keyboardSound.Play();
             foreach (char c in _intro)
             {
+                
                 _introTxt.text += c;
 
                 if (_isSkip == false)
-                {
-                    yield return new WaitForSeconds(0.1f);
+                { 
+                    yield return new WaitForSeconds(0.2f);
                 }
             }
 
+            
             _isIntroEnd = true;
             StartCoroutine(IntroEnter());
         }
 
         IEnumerator IntroEnter()
         {
-
+            _keyboardSound.Stop();
             while (true)
             {
                 if (_isIntroEnd == false)
