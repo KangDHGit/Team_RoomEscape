@@ -2022,8 +2022,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Team3 Rusty Ocean - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D \uAC15\uB300\uD55C
-    \uBC15\uD558\uB839"
+  m_Text: "Team3 \uC52C\uACFC \uD568\uAED8 - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D
+    \uAC15\uB300\uD55C \uBC15\uD558\uB839"
 --- !u!1 &2012702623342694645
 GameObject:
   m_ObjectHideFlags: 0

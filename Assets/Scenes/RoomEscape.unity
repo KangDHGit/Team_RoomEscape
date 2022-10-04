@@ -431,6 +431,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3137581301756780097, guid: 172189e85a782d34c81542120f30f8fa, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d6879c27ef76764ea1954e4f7b7a3dc, type: 3}
     - target: {fileID: 3137581302003486242, guid: 172189e85a782d34c81542120f30f8fa, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3050,7 +3054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 389714243715910319, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_Text
-      value: "Team3 \uAE43 \uC62C\uB9B4\uAC8C\uC694 - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D
+      value: "Team3 \uC52C\uACFC \uD568\uAED8 - \uBC15\uBBFC\uC9C0 \uC815\uBB38\uD56D
         \uAC15\uB300\uD55C \uBC15\uD558\uB839"
       objectReference: {fileID: 0}
     - target: {fileID: 841539513319484102, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
