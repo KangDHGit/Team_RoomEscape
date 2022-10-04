@@ -21,6 +21,7 @@ namespace RoomEscape
         GameObject _introEnter;
 
         bool _isIntroEnd;
+        bool _isSkip;
 
         private void Start()
         {
@@ -37,7 +38,7 @@ namespace RoomEscape
             _ui_Black.SetActive(false);
 
             _isIntroEnd = false;
-
+            _isSkip = false;
 
             _introTxt = transform.Find("UI_Intro/IntroTxt").GetComponent<Text>();
             _intro = _introTxt.text;
@@ -51,6 +52,7 @@ namespace RoomEscape
         {
             if (Input.GetKeyUp(KeyCode.Return))
             {
+                _isSkip = true;
                 if (_isIntroEnd == true)
                 {
                     IntroSet(false);
@@ -89,7 +91,11 @@ namespace RoomEscape
             foreach (char c in _intro)
             {
                 _introTxt.text += c;
-                yield return new WaitForSeconds(0.1f);
+
+                if (_isSkip == false)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
 
             _isIntroEnd = true;
