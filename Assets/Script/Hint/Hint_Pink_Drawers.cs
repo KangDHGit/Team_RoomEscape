@@ -19,7 +19,7 @@ namespace RoomEscape
         {
             _pink_drawersCam = CameraManager.I.transform.Find("SPRING/Cam_Pink_drawers").GetComponent<Camera>();
             _binoculars = RoomObjManager.I.transform.Find("Room_Spring/South1/ToyBoxes/Binoculars").GetComponent<RoomObj>();
-            _binoculars._lock = true;
+            //_binoculars._lock = true;
         }
         public bool RayCheckHint()
         {
