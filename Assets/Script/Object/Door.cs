@@ -57,7 +57,8 @@ namespace RoomEscape
                 yield return null;
                 _img_Bg.color += new Color(0, 0, 0, 1.0f * Time.deltaTime);
             }
-            _ui_GameEnd.SetActive(true);
+            //_ui_GameEnd.SetActive(true);
+            UI_GameCycle.I.GameEnd();
             yield return null;
         }
     }

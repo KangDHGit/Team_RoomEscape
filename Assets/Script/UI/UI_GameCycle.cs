@@ -9,11 +9,15 @@ namespace RoomEscape
 {
     public class UI_GameCycle : MonoBehaviour
     {
+        public static UI_GameCycle I;
+
         GameObject _ui_GameStart;
         GameObject _ui_ConfirmRestart;
         GameObject _ui_Restart;
         GameObject _ui_Intro;
         GameObject _ui_Black;
+
+        GameObject _ui_GameEnd;
 
         Text _introTxt;
         string _intro;
@@ -25,6 +29,11 @@ namespace RoomEscape
 
         public AudioSource _keyboardSound;
 
+        void Awake()
+        {
+            I = this;
+        }
+
         private void Start()
         {
             _ui_GameStart = transform.Find("UI_GameStart").gameObject;
@@ -32,12 +41,14 @@ namespace RoomEscape
             _ui_Restart = transform.Find("UI_GameReStart/Restart").gameObject;
             _ui_Intro = transform.Find("UI_Intro").gameObject;
             _ui_Black = transform.Find("UI_Black").gameObject;
+            _ui_GameEnd = transform.Find("UI_GameEnd").gameObject;
 
             _ui_GameStart.SetActive(true);
             _ui_ConfirmRestart.SetActive(false);
             _ui_Restart.SetActive(false);
             _ui_Intro.SetActive(false);
             _ui_Black.SetActive(false);
+            _ui_GameEnd.SetActive(false);
 
             _isIntroEnd = false;
             _isSkip = false;
@@ -86,6 +97,12 @@ namespace RoomEscape
             _ui_Black.SetActive(set);
             _ui_Intro.SetActive(set);
             _ui_Restart.SetActive(!set);
+        }
+
+        public void GameEnd()
+        {
+            _ui_Restart.SetActive(false);
+            _ui_GameEnd.SetActive(true);
         }
 
         IEnumerator PlayIntro()
