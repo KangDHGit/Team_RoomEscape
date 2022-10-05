@@ -73,6 +73,14 @@ namespace RoomEscape
                     IntroSet(false);
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (_ui_ConfirmRestart.activeSelf == true)
+                {
+                    Application.Quit();
+                }
+            }
         }
 
             
