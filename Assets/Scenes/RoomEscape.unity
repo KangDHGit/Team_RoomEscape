@@ -3131,7 +3131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556415212682633709, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_Text
-      value: "\rMerry's Memories"
+      value: Mary's Memories
       objectReference: {fileID: 0}
     - target: {fileID: 5727592622867806698, guid: a808caddfdbcc3f4dbdb4fa20a6bbe54, type: 3}
       propertyPath: m_IsActive
