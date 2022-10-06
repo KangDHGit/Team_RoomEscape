@@ -15,6 +15,8 @@ namespace RoomEscape
         public bool _isZoom = false;
         public bool _isZoom_Child = false;
 
+        public bool _isZoom_Middle = false;
+
         private void Awake()
         {
             I = this;

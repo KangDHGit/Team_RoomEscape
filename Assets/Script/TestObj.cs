@@ -13,13 +13,13 @@ namespace RoomEscape
     }
     public class TestObj : MonoBehaviour
     {
-        [SerializeField] protected Room _room; // 이 오브젝트가 속한 방
+        [SerializeField] protected Room _room; 
         TYPE _type; public TYPE _Type { get { return _type; } }
-        public GameObject _objZCam; // 오브젝트 클릭시 활성화할 줌(Zoom) 카메라
+        public GameObject _objZCam; 
         [SerializeField] Collider _col;
-        public List<TestObj> _list_ChildObj; // 오브젝트의 자식 오브젝트
+        public List<TestObj> _list_ChildObj;
         public TestObj _parentObj;
-        public List<RoomItem> _list_Item;    // 오브젝트의 자식 아이템
+        public List<RoomItem> _list_Item;
 
         public virtual void Init()
         {
@@ -108,8 +108,11 @@ namespace RoomEscape
 
         protected virtual void OnClick(bool stat) // true : MouseDown, false : BackBtn
         {
-            _objZCam.SetActive(stat);
+            if (_objZCam != null)
+                _objZCam.SetActive(stat);
             SetCol(!stat);
+            if(_list_ChildObj != null)
+                ListSetCol(_list_ChildObj, true);
             CameraManager.I._isZoom = stat;
             ListSetCol(_list_Item, stat);
         }
@@ -120,7 +123,7 @@ namespace RoomEscape
             {
                 foreach (var item in list)
                 {
-                    if (item.TryGetComponent<Collider>(out Collider col))
+                    if (item.TryGetComponent(out Collider col))
                         col.enabled = stat;
                 }
             }
