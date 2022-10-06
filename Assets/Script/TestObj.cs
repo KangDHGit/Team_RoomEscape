@@ -113,7 +113,21 @@ namespace RoomEscape
             SetCol(!stat);
             if(_list_ChildObj != null)
                 ListSetCol(_list_ChildObj, true);
-            CameraManager.I._isZoom = stat;
+            switch (_type)
+            {
+                case TYPE.DEFAULT:
+                case TYPE.PARENT:
+                    CameraManager.I._isZoom = stat;
+                    break;
+                case TYPE.MIDDLE:
+                    CameraManager.I._isZoom_Middle = stat;
+                    break;
+                case TYPE.CHILD:
+                    CameraManager.I._isZoom_Child = stat;
+                    break;
+                default:
+                    break;
+            }
             ListSetCol(_list_Item, stat);
         }
 
