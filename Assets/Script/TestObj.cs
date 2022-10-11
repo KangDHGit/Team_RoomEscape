@@ -14,12 +14,17 @@ namespace RoomEscape
     public class TestObj : MonoBehaviour
     {
         [SerializeField] protected Room _room; 
-        TYPE _type; public TYPE _Type { get { return _type; } }
+        [SerializeField]TYPE _type; public TYPE _Type { get { return _type; } }
         public GameObject _objZCam; 
         [SerializeField] Collider _col;
         public List<TestObj> _list_ChildObj;
         public TestObj _parentObj;
         public List<RoomItem> _list_Item;
+
+        private void Start()
+        {
+            Init();
+        }
 
         public virtual void Init()
         {
@@ -56,6 +61,18 @@ namespace RoomEscape
                 _list_Item = new List<RoomItem>(transform.GetComponentsInDirectChild<RoomItem>());
                 ListSetCol(_list_Item, false);
                 List_ItemInit();
+            }
+        }
+
+        protected virtual void OnMouseUp()
+        {
+            if (!UIManager.I.CheckClickUI() && !CameraManager.I._isZoom)
+            {
+                if (_objZCam != null)
+                {
+                    UIManager.I.OnChangeView(false);
+                    OnClick(true);
+                }
             }
         }
 
